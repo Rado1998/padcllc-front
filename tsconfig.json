@@ -14,7 +14,48 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@env": [
+        "src/environments/environment"
+      ],
+      "@globals/*": [
+        "src/app/core/globals/*"
+      ],
+      "@utils/*": [
+        "src/app/core/utils/*"
+      ],
+      "@guards/*": [
+        "src/app/core/guards/*"
+      ],
+      "@helpers/*": [
+        "src/app/core/helpers/*"
+      ],
+      "@modules/*": [
+        "src/app/core/modules/*"
+      ],
+      "@models/*": [
+        "src/app/core/models/*"
+      ],
+      "@services/*": [
+        "src/app/core/services/*"
+      ],
+      "@interceptors/*": [
+        "src/app/core/interceptors/*"
+      ],
+      "@components/*": [
+        "src/app/shared/components/*"
+      ],
+      "@directives/*": [
+        "src/app/shared/directives/*"
+      ],
+      "@pipes/*": [
+        "src/app/shared/pipes/*"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ],
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
