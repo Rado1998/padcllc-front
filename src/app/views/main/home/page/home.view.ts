@@ -1,6 +1,8 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { SlickCarouselComponent } from 'ngx-slick-carousel';
 
 declare const google;
+
 
 @Component({
     selector: 'app-home-view',
@@ -9,8 +11,20 @@ declare const google;
     encapsulation: ViewEncapsulation.None
 })
 export class HomeViewComponent implements OnInit, OnDestroy {
+  @ViewChild('slickModal') slickModal: SlickCarouselComponent;
+  slides = [ {}, {}, {}, {}, {}, {}, {}, {}  ];
+  slideConfig = {};
 
-    constructor() { }
+    constructor() {
+      this.slideConfig = {
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 2000
+    };
+  }
 
     ngOnInit() {
         this._initMap();
@@ -22,5 +36,13 @@ export class HomeViewComponent implements OnInit, OnDestroy {
           zoom: 8,
         });
       }
+      next() {
+        this.slickModal.slickNext();
+      }
+      
+      prev() {
+        this.slickModal.slickPrev();
+      }
+
     ngOnDestroy() { }
 }
