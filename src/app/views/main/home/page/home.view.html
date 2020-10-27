@@ -8,7 +8,7 @@
         There are many variations of passages of Lorem Ipsum available
       </label>
 
-            <div class="team-items">
+            <div class="team-items main-class">
                 <div class="team-item">
                     <img src="assets/images/default_image.png" class="team-img">
 
@@ -167,7 +167,7 @@
         <!--REQUEST END-->
 
         <!--CONTACT US-->
-        <div class="contact">
+        <div class="contact main-class">
             <p class="block-title">CONTACT US</p>
             <div class="contact-container  d-flex">
                 <div class="left-content">
@@ -197,7 +197,7 @@
         <!--CONTACT US END-->
 
         <!--OUR SERVICES-->
-        <div class="services">
+        <div class="services main-class">
             <p class="block-title">OUR SERVICES</p>
             <div class="service-items d-flex  justify-content-between">
                 <div class="service-item">
@@ -259,7 +259,7 @@
         </div>
         <!--OUR SERVICES END-->
         <!--WHAT WE DO-->
-        <div class="what-we-do">
+        <div class="what-we-do main-class">
             <p class="block-title">WHAT WE DO</p>
             <div class="what-we-do-items d-flex align-items-center">
                 <div class="what-we-do-item">
@@ -300,22 +300,73 @@
         <!--WHAT WE DO END-->
         <!--OUR PROJECTS-->
         <div class="our-projects">
-            <p class="block-title">OUR PROJECTS</p>
-            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-                <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-                    <!-- <img [src]="slide.img" alt="" width="100%" class="chicken-image"> -->
-                    <p class="carousel-title">WASHBOT</p>
-                    <p class="carousel-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage
-                        of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                    <button class="btn">VIEW MORE</button>
+            <div class="main-class">
+                <p class="block-title">OUR PROJECTS</p>
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                        <!-- <img [src]="slide.img" alt="" width="100%" class="chicken-image"> -->
+                        <p class="carousel-title">WASHBOT</p>
+                        <p class="carousel-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use
+                            a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                        <button class="view-more-btn">VIEW MORE</button>
+                    </div>
+
+
+                </ngx-slick-carousel>
+                <div class="d-flex prev-content">
+                    <img src="assets/images/icons/back.png" class="back" (click)="prev()">
+                    <img src="assets/images/icons/next.png" class="next" (click)="next()">
                 </div>
-
-
-            </ngx-slick-carousel>
-            <div class="d-flex prev-content">
-                <img src="assets/images/icons/back.png" class="back" (click)="prev()">
-                <img src="assets/images/icons/next.png" class="next" (click)="next()">
             </div>
         </div>
+        <!--OUR PROJECTS--END-->
+        <!--SERVICE PARTNERSHIP-->
+        <div class="service-partnership main-class d-flex justify-content-between">
+            <div class="service-partnership-content">
+                <div class="service-partnership-item">
+                    <img src="/assets/images/service-partnership-item.png" class="item-img">
+                    <div class="title-content">
+                        <p class="title">7500+
+                            <p>
+                                <p class="text">Lorem ipsum dolor sit amet</p>
+                    </div>
+                </div>
+                <div class="service-partnership-item">
+                    <img src="/assets/images/service-partnership-item.png" class="item-img">
+                    <div class="title-content">
+                        <p class="title">8.52/10
+                            <p>
+                                <p class="text">Lorem ipsum dolor sit amet</p>
+                    </div>
+                </div>
+                <div class="service-partnership-item">
+                    <img src="/assets/images/service-partnership-item.png" class="item-img">
+                    <div class="title-content">
+                        <p class="title">350+
+                            <p>
+                                <p class="text">Lorem ipsum dolor sit amet</p>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="service-partnership-description">
+                <div>
+                    <p class="block-title">SERVICE</p>
+                    <p class="block-title"> PARTNERSHIP</p>
+                    <label class="home-label">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</label>
+                </div>
+                <p class="title">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage
+                    of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                <button class="view-more-btn">VIEW MORE</button>
+                <div class="cooperation d-flex align-items-center justify-content-between">
+                    <img src="assets/images/PicsArt.png" class="cooperation-img">
+                    <img src="assets/images/instigate.png" class="cooperation-img">
+                    <img src="assets/images/ecosyntax.png" class="cooperation-img">
+                    <img src="assets/images/aws.png" class="cooperation-img">
+                </div>
+            </div>
+        </div>
+        <!--SERVICE PARTNERSHIP--END-->
     </div>
 </div>
