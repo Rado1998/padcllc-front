@@ -17,11 +17,11 @@ export class HomeViewComponent implements OnInit, OnDestroy {
 
     constructor() {
       this.slideConfig = {
-        infinite: true,
+        infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: false,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2000
     };
   }

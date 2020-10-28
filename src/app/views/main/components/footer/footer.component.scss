@@ -1,4 +1,6 @@
 .footer {
+    display: flex;
+    flex-direction: column;
     .footer-container {
         display: flex;
         justify-content: space-between;
@@ -42,5 +44,8 @@
         .right-navbar {
             margin-left: 200px;
         }
+    }
+    .reserv-logo {
+        margin: 180px auto 50px !important;
     }
 }

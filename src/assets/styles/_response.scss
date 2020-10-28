@@ -1,0 +1,188 @@
+        // @media only screen and (max-width:640px) {
+        //     .block-title {
+        //         font-weight: bold !important;
+        //         font-size: 12px !important;
+        //         line-height: 15px !important;
+        //         &::after {
+        //             height: 3px !important;
+        //             margin: 5px 0 30px 0 !important;
+        //         }
+        //     }
+        //     .view-more-btn {
+        //         width: 120px !important;
+        //         height: 35px !important;
+        //         font-size: 10px !important;
+        //         margin: 0 !important;
+        //     }
+        //     ///our project 
+        //     .our-projects {
+        //         margin: 0 0 0 35px !important;
+        //         .our-projects-main {
+        //             background-image: url("/assets/images/response-project.png") !important;
+        //         }
+        //         .carousel {
+        //             width: 310px !important;
+        //         }
+        //     }
+        //     .carousel-title {
+        //         font-weight: bold !important;
+        //         font-size: 15px !important;
+        //         line-height: 18px !important;
+        //     }
+        //     .carousel-text {
+        //         font-size: 10px !important;
+        //         line-height: 182.9% !important;
+        //     }
+        //     .btn-content {
+        //         display: flex !important;
+        //         justify-content: space-between !important;
+        //         margin: 30px 25px 0 0;
+        //         .prev-content {
+        //             margin: 0 !important;
+        //             .back,
+        //             .next {
+        //                 height: 26px !important;
+        //             }
+        //             .next {
+        //                 margin-left: 36px !important;
+        //             }
+        //         }
+        //     }
+        // }
+        // .home {
+        //     .our-projects {
+        //         background-image: url("/assets/images/response-project.png");
+        //     }
+        // }
+        @media only screen and (max-width:640px) {
+            .home {
+                .block-title {
+                    font-weight: bold !important;
+                    font-size: 12px !important;
+                    line-height: 15px !important;
+                    &::after {
+                        height: 3px !important;
+                        margin: 5px 0 25px 0 !important;
+                    }
+                }
+                .home-label {
+                    font-size: 8px !important;
+                }
+                .view-more-btn {
+                    width: 120px !important;
+                    height: 35px !important;
+                    font-size: 10px !important;
+                }
+                .our-projects-main {
+                    background-image: url("/assets/images/response-project.png") !important;
+                    .carousel {
+                        .carousel-title {
+                            font-size: 15px !important;
+                            line-height: 18px !important;
+                        }
+                        .carousel-text {
+                            width: 310px !important;
+                            font-size: 10px !important;
+                        }
+                    }
+                    .btn-content {
+                        display: flex !important;
+                        justify-content: space-between !important;
+                        .back,
+                        .next {
+                            height: 20px !important;
+                        }
+                        .next {
+                            margin-left: 36px !important;
+                        }
+                    }
+                }
+                //service
+                .our-services {
+                    .block-title {
+                        &::after {
+                            margin: 5px auto !important;
+                        }
+                    }
+                    .service-item {
+                        width: 100% !important;
+                        .header-img {
+                            width: 55px !important;
+                            height: 55px !important;
+                        }
+                        .service-img {
+                            width: 80px !important;
+                        }
+                        .title {
+                            font-size: 15px !important;
+                            line-height: 16px !important;
+                        }
+                        .btn {
+                            font-size: 10px !important;
+                            font-weight: 600 !important;
+                            padding: 5px 10px !important;
+                        }
+                    }
+                }
+                ///contact Us
+                .contact-us {
+                    .contact-main {
+                        flex-direction: column !important;
+                        .link,
+                        .form-title,
+                        .form-label {
+                            font-size: 10px !important;
+                            line-height: 12px !important;
+                        }
+                        .contact-item {
+                            margin: 20px 0 !important;
+                        }
+                        .form-content {
+                            .form-input {
+                                width: 141.53px !important;
+                                height: 22.14px !important;
+                                border-radius: 5px !important;
+                            }
+                            .btn {
+                                width: 62.06px !important;
+                                height: 22.14px !important;
+                                border-radius: 5px !important;
+                                font-size: 10px !important;
+                                line-height: 12px !important;
+                            }
+                        }
+                        .map {
+                            margin-top: 35px !important;
+                            width: 360px !important;
+                            height: 200px !important;
+                        }
+                    }
+                }
+                //request
+                .request {
+                    .request-form {
+                        width: 335px !important;
+                        .form-content {
+                            margin: 14px !important;
+                            .form-input {
+                                padding: 14px 15px !important;
+                                border: 0.5px solid #E3E3E3 !important;
+                                border-radius: 5px !important;
+                            }
+                            .label {
+                                font-size: 10px !important;
+                                line-height: 12px !important;
+                            }
+                        }
+                        .form-btn {
+                            width: 163px !important;
+                            height: 27px !important;
+                            border-radius: 5px !important;
+                            font-size: 10px !important;
+                            line-height: 12px !important;
+                            border: none !important;
+                        }
+                    }
+                }
+            }
+        }
