@@ -63,8 +63,8 @@
                 </div>
             </div>
         </div> -->
-<!--WHAT WE DO END-->
-<!--OUR SERVICES-->
+<!-- WHAT WE DO END -->
+<!-- OUR SERVICES -->
 <!-- <div class="services main-class">
             <p class="block-title">OUR SERVICES</p>
             <div class="service-items d-flex  justify-content-between">
@@ -125,8 +125,8 @@
 
             </div>
         </div> -->
-<!--OUR SERVICES END-->
-<!--SERVICE PARTNERSHIP-->
+<!-- OUR SERVICES END -->
+<!-- SERVICE PARTNERSHIP -->
 <!-- <div class="service-partnership main-class d-flex justify-content-between">
             <div class="service-partnership-content">
                 <div class="service-partnership-item">
@@ -172,10 +172,8 @@
                 </div>
             </div>
         </div> -->
-<!--SERVICE PARTNERSHIP--END-->
-
-
-<!--TEAMS-->
+<!-- SERVICE PARTNERSHIP--END -->
+<!-- TEAMS -->
 <!-- <div class="team">
             <p class="block-title">OUR TEAM</p>
 
@@ -304,8 +302,8 @@
                 </div>
             </div>
         </div> -->
-<!--TEAMS END-->
-<!--REQUEST-->
+<!-- TEAMS END -->
+<!-- REQUEST -->
 <!-- <div class="request">
             <p class="block-title">SEND REQUEST</p>
 
@@ -339,9 +337,8 @@
                 </form>
             </div>
         </div> -->
-<!--REQUEST END-->
-
-<!--CONTACT US-->
+<!-- REQUEST END -->
+<!-- CONTACT US -->
 <!-- <div class="contact main-class">
             <p class="block-title">CONTACT US</p>
             <div class="contact-container  d-flex">
@@ -369,157 +366,415 @@
                 </div>
             </div>
         </div> -->
-<!--CONTACT US END-->
+<!-- CONTACT US END -->
 <!-- </div>
 </div> -->
 
 <div class="home">
-    <!--OUR PROJECT-->
+    <!-- OUR PROJECT -->
+
     <div class="our-projects">
         <p class="block-title">OUR PROJECTS</p>
+
         <div class="our-projects-main">
             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-                <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                <div ngxSlickItem="ngxSlickItem" *ngFor="let slide of slides" class="slide">
                     <p class="carousel-title">WASHBOT</p>
-                    <p class="carousel-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage
-                        of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+
+                    <p class="carousel-text">
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum,
+                        you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                    </p>
                 </div>
             </ngx-slick-carousel>
+
             <div class="btn-content align-items-center">
                 <button class="view-more-btn">VIEW MORE</button>
+
                 <div class="d-flex prev-content justify-content-center">
                     <img src="assets/images/icons/back.png" class="back" (click)="prev()">
+
                     <img src="assets/images/icons/next.png" class="next" (click)="next()">
                 </div>
             </div>
         </div>
     </div>
-    <!--OUR PROJECT--END-->
-    <!--OUR SERVICES-->
+
+    <!-- OUR PROJECT--END -->
+    <!-- OUR SERVICES -->
+
     <div class="our-services d-flex main-class">
         <p class="block-title m-auto">OUR SERVICES</p>
+
         <div class="services-content">
             <div class="service-item">
                 <div class="service-item-header d-flex align-items-center">
                     <img src="/assets/images/Vector-1.png" class="header-img">
+
                     <img src="/assets/images/WEB.png" class="service-img">
                 </div>
+
                 <div class="service-item-main">
                     <p class="title">Frontend</p>
+
                     <div class="btn-contet">
                         <button class="btn ml-0">Angular 2+</button>
+
                         <button class="btn">ReactJs</button>
+
                         <button class="btn ml-0">HTML5/CSS3</button>
                     </div>
+
                     <p class="title">Backend</p>
+
                     <div class="btn-contet">
                         <button class="btn ml-0">PYTHON</button>
-                        <button class="btn">Django</button>
-                    </div>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-item-header d-flex align-items-center">
-                    <img src="/assets/images/Vector-3.png" class="header-img">
-                    <img src="/assets/images/MOBILE.png" class="service-img">
-                </div>
-                <div class="service-item-main">
-                    <p class="title">Technologies</p>
-                    <div class="btn-contet">
-                        <button class="btn ml-0">React Native</button>
-                        <button class="btn">Flutter</button>
-                    </div>
-                    <p class="title">Advantades</p>
-                    <div class="btn-contet">
-                        <button class="btn ml-0">PYTHON</button>
-                        <button class="btn">Django</button>
-                    </div>
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-item-header d-flex align-items-center">
-                    <img src="/assets/images/Vector-2.png" class="header-img">
-                    <img src="/assets/images/GAMES.png" class="service-img">
-                </div>
-                <div class="service-item-main">
-                    <p class="title">Technologies</p>
-                    <div class="btn-contet">
-                        <button class="btn ml-0">Unity</button>
-                    </div>
-                    <p class="title">Advantages</p>
-                    <div class="btn-contet">
-                        <button class="btn ml-0">PYTHON</button>
+
                         <button class="btn">Django</button>
                     </div>
                 </div>
             </div>
 
+            <div class="service-item">
+                <div class="service-item-header d-flex align-items-center">
+                    <img src="/assets/images/Vector-3.png" class="header-img">
+
+                    <img src="/assets/images/MOBILE.png" class="service-img">
+                </div>
+
+                <div class="service-item-main">
+                    <p class="title">Technologies</p>
+
+                    <div class="btn-contet">
+                        <button class="btn ml-0">React Native</button>
+
+                        <button class="btn">Flutter</button>
+                    </div>
+
+                    <p class="title">Advantades</p>
+
+                    <div class="btn-contet">
+                        <button class="btn ml-0">PYTHON</button>
+
+                        <button class="btn">Django</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-item-header d-flex align-items-center">
+                    <img src="/assets/images/Vector-2.png" class="header-img">
+
+                    <img src="/assets/images/GAMES.png" class="service-img">
+                </div>
+
+                <div class="service-item-main">
+                    <p class="title">Technologies</p>
+
+                    <div class="btn-contet">
+                        <button class="btn ml-0">Unity</button>
+                    </div>
+
+                    <p class="title">Advantages</p>
+
+                    <div class="btn-contet">
+                        <button class="btn ml-0">PYTHON</button>
+
+                        <button class="btn">Django</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <!--OUR SERVICES--END-->
-    <!--CONTACT US-->
+
+    <!-- OUR SERVICES--END -->
+    <!-- CONTACT US -->
+
     <div class="contact-us main-class">
         <p class="block-title m-auto">CONTACT US</p>
+
         <div class="contact-main">
             <div class="left-content">
                 <ul>
-                    <li class="contact-item"><b class="link">ADDRESS:</b>
-                        <a class="link  link-item">Mher Mkrtchyan 47/1 3101 Gyumri, Armenia</a>
+                    <li class="contact-item">
+                        <b class="link">ADDRESS:</b>
+
+                        <a class="link  link-item">
+                            Mher Mkrtchyan 47/1 3101 Gyumri, Armenia
+                        </a>
                     </li>
-                    <li class="contact-item"><b class="link">PHONE:</b><a class="link link-item">+(374)94 019 941</a></li>
-                    <li class="contact-item"><b class="link">E-mail:</b><a class="link  link-item">contact@padcllc.com</a></li>
+
+                    <li class="contact-item">
+                        <b class="link">PHONE:</b>
+
+                        <a class="link link-item">+(374)94 019 941</a>
+                    </li>
+
+                    <li class="contact-item">
+                        <b class="link">E-mail:</b>
+
+                        <a class="link  link-item">contact@padcllc.com</a>
+                    </li>
                 </ul>
+
                 <div class="contact-form">
                     <p class="form-title">Whrite your number</p>
+
                     <label class="form-label">We will call you</label>
+
                     <form>
                         <div class="form-content  d-flex align-items-center">
                             <input class="form-input">
+
                             <button class="btn">Send</button>
                         </div>
                     </form>
                 </div>
             </div>
+
             <div class="right-content">
                 <div id="map" class="map"></div>
             </div>
         </div>
     </div>
-    <!--CONTACT--US--END-->
-    <!--REQUEST-->
+
+    <!-- CONTACT--US--END -->
+    <!-- REQUEST -->
+
     <div class="request">
         <div class="m-auto text-center">
             <p class="block-title">SEND REQUEST</p>
+
             <label class="home-label">
-            There are many variations of passages of Lorem Ipsum available
-          </label>
+                There are many variations of passages of Lorem Ipsum available
+            </label>
         </div>
 
         <div class="request-form m-auto">
             <form>
                 <div class="form-content">
-                    <input type="text" class="form-input m-auto w-100" required>
+                    <input type="text" class="form-input m-auto w-100" required="required">
+
                     <label class="label">Name Surename</label>
                 </div>
+
                 <div class="d-flex align-items-center w-100 justify-content-between">
                     <div class="form-content w-50">
-                        <input type="text" class="form-input m-auto w-100" required>
+                        <input type="text" class="form-input m-auto w-100" required="required">
+
                         <label class="label">Phone</label>
                     </div>
+
                     <div class="form-content w-50 ml-4">
-                        <input type="text" class="form-input m-auto w-100" required>
+                        <input type="text" class="form-input m-auto w-100" required="required">
+
                         <label class="label">City</label>
                     </div>
                 </div>
+
                 <div class="form-content">
-                    <input type="text" class="form-input m-auto w-100" required>
+                    <input type="text" class="form-input m-auto w-100" required="required">
+
                     <label class="label">E-mail</label>
                 </div>
+
                 <div class="btn-content d-flex">
                     <button class="form-btn">Upload your CV</button>
+
                     <button class="form-btn active-btn">Send Request</button>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- REQUEST END -->
+    <!-- OUR TEAM -->
+
+    <div class="our-team main-class">
+        <div class="m-auto text-center">
+            <p class="block-title">OUR TEAM</p>
+
+            <label class="home-label">
+                There are many variations of passages of Lorem Ipsum available
+            </label>
+        </div>
+
+        <div class="our-team-content ">
+            <div class="our-team-item">
+                <img src="assets/images/default_image.png" class="team-img">
+
+                <div class="team-item-description">
+                    <p class="name">Name Surename</p>
+
+                    <p class="profession">DESIGNER</p>
+
+                    <p class="information">
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                    </p>
+
+                    <div class="social-items d-flex align-items-center">
+                        <div class="social-item">
+                            <img src="assets/images/icons/fb.png" class="social-img">
+                        </div>
+
+                        <div class="social-item">
+                            <img src="assets/images/icons/instagram.png" class="social-img">
+                        </div>
+
+                        <div class="social-item">
+                            <img src="assets/images/icons/twitter.png" class="social-img">
+                        </div>
+
+                        <div class="social-item">
+                            <img src="assets/images/icons/linkedin.png" class="social-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="our-team-item">
+                <img src="assets/images/default_image.png" class="team-img">
+
+                <div class="team-item-description">
+                    <p class="name">Name Surename</p>
+
+                    <p class="profession">DESIGNER</p>
+
+                    <p class="information">
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                    </p>
+
+                    <div class="social-items d-flex align-items-center">
+                        <div class="social-item">
+                            <img src="assets/images/icons/fb.png" class="social-img">
+                        </div>
+
+                        <div class="social-item">
+                            <img src="assets/images/icons/instagram.png" class="social-img">
+                        </div>
+
+                        <div class="social-item">
+                            <img src="assets/images/icons/twitter.png" class="social-img">
+                        </div>
+
+                        <div class="social-item">
+                            <img src="assets/images/icons/linkedin.png" class="social-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="our-team-item">
+                <img src="assets/images/default_image.png" class="team-img">
+
+                <div class="team-item-description">
+                    <p class="name">Name Surename</p>
+
+                    <p class="profession">DESIGNER</p>
+
+                    <p class="information">
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                    </p>
+
+                    <div class="social-items d-flex align-items-center">
+                        <div class="social-item">
+                            <img src="assets/images/icons/fb.png" class="social-img">
+                        </div>
+
+                        <div class="social-item">
+                            <img src="assets/images/icons/instagram.png" class="social-img">
+                        </div>
+
+                        <div class="social-item">
+                            <img src="assets/images/icons/twitter.png" class="social-img">
+                        </div>
+
+                        <div class="social-item">
+                            <img src="assets/images/icons/linkedin.png" class="social-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="our-team-item">
+                <img src="assets/images/default_image.png" class="team-img">
+
+                <div class="team-item-description">
+                    <p class="name">Name Surename</p>
+
+                    <p class="profession">DESIGNER</p>
+
+                    <p class="information">
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+                    </p>
+
+                    <div class="social-items d-flex align-items-center">
+                        <div class="social-item">
+                            <img src="assets/images/icons/fb.png" class="social-img">
+                        </div>
+
+                        <div class="social-item">
+                            <img src="assets/images/icons/instagram.png" class="social-img">
+                        </div>
+
+                        <div class="social-item">
+                            <img src="assets/images/icons/twitter.png" class="social-img">
+                        </div>
+
+                        <div class="social-item">
+                            <img src="assets/images/icons/linkedin.png" class="social-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--OUR TEAM END-->
+    <!--SERVICE PARTNERSHIP-->
+    <div class="service-partnership  main-class d-flex justify-content-between">
+        <div class="header-block-content">
+            <p class="block-title">SERVICE PARTNERSHIP</p>
+            <label class="home-label">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</label>
+        </div>
+        <div class="service-partnership-content">
+            <div class="service-partnership-item">
+                <img src="/assets/images/service-partnership-item.png" class="item-img">
+                <div class="title-content ">
+                    <p class="title">7500+
+                        <p>
+                            <p class="text">Lorem ipsum dolor sit amet</p>
+                </div>
+            </div>
+            <div class="service-partnership-item">
+                <img src="/assets/images/service-partnership-item.png" class="item-img">
+                <div class="title-content">
+                    <p class="title">8.52/10
+                        <p>
+                            <p class="text">Lorem ipsum dolor sit amet</p>
+                </div>
+            </div>
+            <div class="service-partnership-item">
+                <img src="/assets/images/service-partnership-item.png" class="item-img">
+                <div class="title-content">
+                    <p class="title">350+
+                        <p>
+                            <p class="text">Lorem ipsum dolor sit amet</p>
+                </div>
+            </div>
+        </div>
+        <div class="service-partnership-description">
+            <div class="block-content">
+                <p class="block-title">SERVICE PARTNERSHIP</p>
+                <label class="home-label">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</label>
+            </div>
+
+            <p class="title">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of
+                Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+            <button class="view-more-btn mt-4">VIEW MORE</button>
+            <div class="cooperation d-flex align-items-center justify-content-between">
+                <img src="assets/images/PicsArt.png" class="cooperation-img">
+                <img src="assets/images/instigate.png" class="cooperation-img">
+                <img src="assets/images/ecosyntax.png" class="cooperation-img">
+                <img src="assets/images/aws.png" class="cooperation-img">
+            </div>
         </div>
     </div>
 </div>
