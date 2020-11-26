@@ -1,8 +1,15 @@
 import { NgModule } from '@angular/core';
 
+import { InlineSvgDirective } from './directives';
+
 @NgModule({
-    declarations: [],
+    declarations: [
+        /* DIRECTIVES */
+        InlineSvgDirective
+    ],
     imports: [],
-    exports: []
+    exports: [
+        InlineSvgDirective
+    ]
 })
 export class SharedModule { }
