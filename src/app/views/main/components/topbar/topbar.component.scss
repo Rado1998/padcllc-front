@@ -11,7 +11,7 @@
             align-items: center;
             justify-content: space-between;
             padding: 30px 0;
-            margin-left: 260px;
+            margin-left: 250px;
             margin-right: 40px;
             .social-items {
                 display: flex;
@@ -41,6 +41,31 @@
                             }
                         }
                     }
+                }
+            }
+        }
+        .logo-container {
+            margin-top: 80px;
+            margin-left: 250px;
+            margin-right: 40px;
+            display: flex;
+            flex-direction: column;
+            .lc-right-side {
+                width: 70%;
+                margin-left: auto;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                .pg-text-def {
+                    font-weight: normal;
+                    font-size: 24px;
+                    line-height: 35px;
+                    text-align: center;
+                    color: rgba(10, 51, 75, 0.76);
+                }
+                .lc-right-txt {
+                    margin-top: 30px;
+                    padding:0 20px;
                 }
             }
         }
