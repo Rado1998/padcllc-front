@@ -7,17 +7,17 @@ import { SharedModule } from '@shared/shared.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeViewComponent } from './page/home.view';
 
-import { SlickCarouselModule } from 'ngx-slick-carousel';
-
 @NgModule({
-    declarations: [HomeViewComponent],
+    declarations: [
+        HomeViewComponent,
+    ],
     imports: [
         HomeRoutingModule,
         CommonModule,
         FormsModule,
         SharedModule,
         ReactiveFormsModule,
-        SlickCarouselModule
+
     ],
     exports: []
 })

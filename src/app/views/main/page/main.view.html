@@ -1,9 +1,9 @@
 <main class="main">
-    <section class="topbar">
-        <app-topbar></app-topbar>
+    <section class="full-navbar" #fullNavbar>
+        <app-navbar></app-navbar>
     </section>
-    <section class="main-container">
-        <router-outlet></router-outlet>
+    <section class="main-container" [@routeAnimations]="prepareRoute(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
     </section>
     <section class="footer">
         <app-footer></app-footer>

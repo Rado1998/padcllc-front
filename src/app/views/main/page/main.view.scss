@@ -1,0 +1,46 @@
+.main {
+    .full-navbar {
+        .nav-wrapper {
+            position: fixed;
+            top: -100%;
+            width: 100%;
+            padding: 15px 20px;
+            margin: 0;
+            z-index: 2;
+            background-color: rgba(#fff, 0.9);
+            -webkit-box-shadow: 0px 4px 8px -2px rgb(158 158 158 / 75%);
+            -moz-box-shadow: 0px 4px 8px -2px rgb(158 158 158 / 75%);
+            box-shadow: 0px 4px 8px -2px rgb(158 158 158 / 75%);
+        }
+        .show-navbar {
+            animation-name: showNavbarAnimation;
+            animation-duration: 0.5s;
+            animation-delay: 0.5s;
+            animation-fill-mode: forwards;
+        }
+        .hide-navbar {
+            animation-name: hideNavbarAnimation;
+            animation-duration: 0.5s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+@keyframes showNavbarAnimation {
+    from {
+        top: -100%;
+    }
+    to {
+        top: 0;
+    }
+}
+
+@keyframes hideNavbarAnimation {
+    from {
+        top: 0;
+    }
+    to {
+        top: -100%;
+    }
+}
