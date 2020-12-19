@@ -77,7 +77,5 @@ function animationPrev(triggerName: string) {
     ]);
 }
 
-console.log(animations);
-
 export const navAnimations =
     trigger('routeAnimations', animations);

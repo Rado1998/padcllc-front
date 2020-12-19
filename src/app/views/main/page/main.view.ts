@@ -2,8 +2,8 @@ import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, OnInit, 
 import { NavigationEnd, Router, RouterEvent, RouterOutlet } from '@angular/router';
 import { navigationSteps } from '@globals/navigation-steps';
 
-import { Subject } from 'rxjs';
-import { filter, takeUntil } from 'rxjs/operators';
+import { Subject, timer } from 'rxjs';
+import { delay, filter, takeUntil } from 'rxjs/operators';
 
 import { navAnimations } from 'src/app/animations/animations';
 
@@ -48,30 +48,32 @@ export class MainViewComponent implements OnInit, AfterViewInit, OnDestroy {
         const { deltaY } = event;
         const currentUrl: string = this._router.url;
 
+        console.log('callleddd');
+
         const stepIndex = navSteps.findIndex((e) => currentUrl.startsWith(e.url));
+
+        let url: string;
 
         if (deltaY > 0) {
             if (stepIndex === navSteps.length - 1) {
                 return;
             }
-            const url = navSteps[stepIndex + 1].url;
-            if (!this._isInProccess) {
-                this._isInProccess = true;
-                this._router.navigate([url])
-                    .then((e) => {
-                        this._isInProccess = false;
-                    });
-            }
+            url = navSteps[stepIndex + 1].url;
         }
 
         if (deltaY < 0) {
             if (stepIndex === 0) {
                 return;
             }
-            const url = navSteps[stepIndex - 1].url;
-
-            this._router.navigate([url]);
+            url = navSteps[stepIndex - 1].url;
         }
+        timer(50)
+            .pipe(
+                delay(300)
+            )
+            .subscribe(() => {
+                this._router.navigate([url]);
+            });
     }
 
     private _checkNavbarState(): void {
