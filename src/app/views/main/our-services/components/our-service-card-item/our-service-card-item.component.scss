@@ -2,8 +2,8 @@
     cursor: pointer;
     transition: all 0.3s;
     background: #ffffff;
-    box-shadow: 0px 6px 28px 17px rgba(0, 0, 0, 0.05);
-    padding: 20px;
+    box-shadow: 0px 6px 9px 7px rgba(0, 0, 0, 0.05);
+    padding: 40px 40px 100px 40px;
     &-container {
         .card-top {
             .card-title {
@@ -12,10 +12,45 @@
                 font-size: 30px;
                 line-height: 49px;
                 color: #00a5c7;
+                text-transform: uppercase;
+                margin-left: 35px;
+            }
+            .card-icon {
+                width: 115px;
+                height: 115px;
+            }
+        }
+        .techs-container {
+            margin-top: 30px;
+            .techs-item {
+                margin-top: 20px;
+                .tech-item-title {
+                    font-size: 24px;
+                    line-height: 29px;
+                    color: #c9c9c9;
+                }
+                .tech-names {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    margin: -9px;
+                    .tech-name-item {
+                        background: #e6e6e6;
+                        border-radius: 15px;
+                        margin: 9px;
+                        .label {
+                            display: block;
+                            font-size: 16px;
+                            line-height: 20px;
+                            padding: 5px 20px;
+                            white-space: nowrap;
+                        }
+                    }
+                }
             }
         }
     }
-    &:hover{
-        transform: scale(1.2);
+    &:hover {
+        transform: scale(1.1);
     }
 }

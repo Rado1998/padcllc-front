@@ -1,9 +1,18 @@
 <div class="our-service-card-item-content">
     <div class="our-service-card-item-content-container">
         <div class="card-top d-flex">
-            <div class="" [appInlineSvg]="'web-1'"></div>
-            <!-- <img src="/assets/icons/web-1.svg" alt=""> -->
-            <h6 class="card-title">WEB</h6>
+            <img class="card-icon" [src]="'/assets/icons/'+cardData?.icon+'.svg'" alt="cardData.title">
+            <h6 class="card-title">{{cardData.title}}</h6>
+        </div>
+        <div class="techs-container">
+            <div class="techs-item" *ngFor="let techItem of cardData?.techs">
+                <h6 class="tech-item-title">{{techItem.label}}</h6>
+                <div class="tech-names">
+                    <div class="tech-name-item" *ngFor="let techName of techItem?.names">
+                        <span class="label">{{techName}}</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -6,13 +6,17 @@ import { MainRoutingModule } from './main-routing.module';
 import { OurProjectsViewComponent } from './our-projects/our-projects.component';
 import { WhatWeDoViewComponent } from './what-we-do/what-we-do.component';
 import { OurServicesViewComponent } from './our-services/our-services.component';
+import { OurServiceCardItemComponent } from './our-services/components';
+import { PartnersViewComponent } from './partners/partners.component';
+import { OurTeamViewComponent } from './our-team/our-team.component';
 
 import { SharedModule } from '@shared/shared.module';
 
 import { FooterComponent } from './components';
 
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { OurServiceCardItemComponent } from './our-services/components';
+import { OurTeamCardComponent } from './our-team/components';
+
 
 
 @NgModule({
@@ -27,7 +31,11 @@ import { OurServiceCardItemComponent } from './our-services/components';
         OurServiceCardItemComponent,
         /** WHAT WE DO */
         WhatWeDoViewComponent,
-
+        /** PARTNERS */
+        PartnersViewComponent,
+        /** OUR TEAM */
+        OurTeamViewComponent,
+        OurTeamCardComponent
     ],
     imports: [
         MainRoutingModule,

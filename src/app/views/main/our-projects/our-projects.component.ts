@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
 
 @Component({
@@ -7,7 +7,7 @@ import { SlickCarouselComponent } from 'ngx-slick-carousel';
     styleUrls: ['our-projects.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class OurProjectsViewComponent {
+export class OurProjectsViewComponent implements OnInit, OnDestroy {
     @ViewChild('slickElement') slickModal: SlickCarouselComponent;
 
     slides = [
@@ -29,7 +29,11 @@ export class OurProjectsViewComponent {
         };
     }
 
+    ngOnInit() { }
+
     public slickInit($event): void {
         console.log($event);
     }
+
+    ngOnDestroy() {}
 }

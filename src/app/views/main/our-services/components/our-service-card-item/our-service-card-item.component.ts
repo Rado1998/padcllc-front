@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { ICardData } from '@models/our-services';
 
 @Component({
     selector: 'app-our-service-card-item',
@@ -7,10 +8,13 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 export class OurServiceCardItemComponent implements OnInit, OnDestroy {
+    @Input() public cardData: ICardData;
 
     constructor() { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        console.log(this.cardData);
+    }
 
     ngOnDestroy() { }
 }
