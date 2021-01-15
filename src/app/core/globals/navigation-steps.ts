@@ -3,5 +3,6 @@ export const navigationSteps = [
     { url: '/our-projects', name: 'OurProjectsPage' },
     { url: '/what-we-do', name: 'WhatWeDoPage' },
     { url: '/our-services', name: 'OurServicesPage' },
-    { url: '/our-team', name: 'OurTeamPage' }
+    { url: '/our-team', name: 'OurTeamPage' },
+    { url: '/our-team/join', name: 'JoinOurTeamPage' }
 ];

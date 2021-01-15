@@ -48,9 +48,7 @@ export class MainViewComponent implements OnInit, AfterViewInit, OnDestroy {
         const { deltaY } = event;
         const currentUrl: string = this._router.url;
 
-        console.log('callleddd');
-
-        const stepIndex = navSteps.findIndex((e) => currentUrl.startsWith(e.url));
+        const stepIndex = navSteps.findIndex((e) => currentUrl === e.url);
 
         let url: string;
 
@@ -60,13 +58,14 @@ export class MainViewComponent implements OnInit, AfterViewInit, OnDestroy {
             }
             url = navSteps[stepIndex + 1].url;
         }
-
         if (deltaY < 0) {
             if (stepIndex === 0) {
                 return;
             }
             url = navSteps[stepIndex - 1].url;
         }
+        console.log(url);
+
         timer(50)
             .pipe(
                 delay(300)
