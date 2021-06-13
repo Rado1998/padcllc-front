@@ -1,11 +1,13 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, OnInit, Renderer2, ViewChild, ViewEncapsulation } from '@angular/core';
 import { NavigationEnd, Router, RouterEvent, RouterOutlet } from '@angular/router';
+
+import { Debounce } from '@decorators/index';
 import { navigationSteps } from '@globals/navigation-steps';
 
-import { Subject, timer } from 'rxjs';
-import { delay, filter, takeUntil } from 'rxjs/operators';
+import { fromEvent, Subject, Subscription, timer } from 'rxjs';
+import { filter, takeUntil, throttleTime } from 'rxjs/operators';
 
-import { navAnimations } from 'src/app/animations/animations';
+import { navAnimations } from '@animations/animations';
 
 @Component({
     selector: 'app-main-view',
@@ -24,7 +26,14 @@ export class MainViewComponent implements OnInit, AfterViewInit, OnDestroy {
         private _renderer2: Renderer2
     ) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        fromEvent(window, 'wheel')
+            .pipe(throttleTime(1300))
+            .subscribe((e: WheelEvent) => {
+                console.log(e);
+                this._handleWheelEvent(e);
+            });
+    }
 
     ngAfterViewInit() {
         this._checkNavbarState();
@@ -42,7 +51,6 @@ export class MainViewComponent implements OnInit, AfterViewInit, OnDestroy {
             });
     }
 
-    @HostListener('wheel', ['$event'])
     private _handleWheelEvent(event: WheelEvent): void {
         const navSteps = Object.assign([], navigationSteps);
         const { deltaY } = event;
@@ -64,15 +72,7 @@ export class MainViewComponent implements OnInit, AfterViewInit, OnDestroy {
             }
             url = navSteps[stepIndex - 1].url;
         }
-        console.log(url);
-
-        timer(50)
-            .pipe(
-                delay(300)
-            )
-            .subscribe(() => {
-                this._router.navigate([url]);
-            });
+        this._router.navigate([url]);
     }
 
     private _checkNavbarState(): void {

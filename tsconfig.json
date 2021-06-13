@@ -19,6 +19,9 @@
       "@env": [
         "src/environments/environment"
       ],
+      "@animations/*": [
+        "src/app/animations/*"
+      ],
       "@globals/*": [
         "src/app/core/globals/*"
       ],
@@ -30,6 +33,9 @@
       ],
       "@helpers/*": [
         "src/app/core/helpers/*"
+      ],
+      "@decorators/*": [
+        "src/app/core/decorators/*"
       ],
       "@modules/*": [
         "src/app/core/modules/*"
