@@ -31,12 +31,12 @@
                     text-transform: uppercase;
                     cursor: pointer;
                     &:hover {
-                        background-color: #002b43;
+                        background-color: var(--cblue);
                         color: white;
                     }
                 }
                 .active-route {
-                    background-color: #002b43;
+                    background-color: var(--cblue);
                     color: white;
                 }
             }

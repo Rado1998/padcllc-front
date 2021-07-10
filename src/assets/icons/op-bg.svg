@@ -1,5 +1,5 @@
 <svg width="748" height="739" viewBox="0 0 748 739" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M251 503L33.6276 125.75L468.372 125.75L251 503Z" fill="#F2F2F2"/>
 <path d="M670 537L476.01 201.75L863.99 201.75L670 537Z" fill="#BEBEBE"/>
-<path d="M446.5 268L649.583 621.25H243.417L446.5 268Z" fill="#002B43"/>
+<path d="M446.5 268L649.583 621.25H243.417L446.5 268Z" fill="var(--cblue)"/>
 </svg>

@@ -3,22 +3,21 @@
         <header class="topbar">
             <div class="topbar-container">
                 <app-navbar></app-navbar>
-                <div class="logo-container">
-                    <div class="lc-right-side">
-                        <div [appInlineSvg]="'main-logo'"></div>
-                        <h4 class="pg-text-def lc-right-txt">
-                            There are many variations of passages of Lorem Ipsum available, <br>
-                            but the majority have suffered alteration in some form, <br>
-                            by injected humour.
-                        </h4>
-                        <div class="form-group">
-                            <input type="text" class="input email-input" />
-                            <button type="submit" class="btn submit-btn">Send</button>
+                <div class="tb-bottom" #tbBottom>
+                    <ngx-slick-carousel class="left carousel update-animation" #slickElement="slick-carousel" [config]="slideConfig" (beforeChange)="beforeChange()" (afterChange)="afterChange()" (slickInit)="slickInit()">
+                        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                            <div class="slide-inner">
+                                <p class="sub-text">Get the web's modern capabilities</p>
+                                <h4 class="slide-title">We Design. We Develop. We Inspire.</h4>
+                                <p class="slide-desc">Get the web's modern capabilities on your own sites and apps with useful guidance and analysis from padcllc.com.
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="tb-bottom">
-                    <a [appInlineSvg]="'arrow-down'" class="arrow-down" routerLink="/our-projects"></a>
+                    </ngx-slick-carousel>
+                    <!-- <div class="right w-50">
+                        <img class="w-100" src="/assets/images/1.png" />
+                    </div> -->
+                    <a [appInlineSvg]="'arrow-down'" class="arrow-down" routerLink="/our-projects">
+                    </a>
                 </div>
             </div>
         </header>

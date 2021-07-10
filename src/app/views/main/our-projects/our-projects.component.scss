@@ -9,14 +9,12 @@
         background-position: right;
         .pg-title {
             margin-left: 180px;
-            margin-top: 50px;
-            position: relative;
             &::after {
                 display: block;
                 content: "";
                 width: 110px;
                 height: 7px;
-                background: #002b43;
+                background: var(--cblue);
                 position: absolute;
                 bottom: -15px;
                 left: 0;
@@ -32,7 +30,7 @@
                 font-weight: bold;
                 font-size: 45px;
                 line-height: 55px;
-                color: #1a2b39;
+                color: var(--cblue);
                 margin-top: 50px;
             }
             .slide-desc {
@@ -47,10 +45,10 @@
                 font-weight: 400;
                 font-size: 23px;
                 line-height: 182.9%;
-                background: #002b43;
+                background: var(--cblue);
                 border-radius: 0;
                 margin-top: 50px;
-                border: 1px solid #002b43;
+                border: 1px solid var(--cblue);
                 color: #ffffff;
                 padding: 14px 80px;
                 text-transform: uppercase;
@@ -65,7 +63,7 @@
                 -o-transition: all 0.3s;
                 &:hover {
                     background: #ffffff;
-                    color: #002b43;
+                    color: var(--cblue);
                 }
             }
         }

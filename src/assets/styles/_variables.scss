@@ -1,12 +1,13 @@
-.pg-title {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 32px;
-    line-height: 39px;
-    color: #002b43;
-    text-transform: uppercase;
+:root {
+    --black: #000000;
+    --cblue: #00A5C7;
+    --clight-blue-one: #0079a9;
+    --clight-blue-two: #00a3c4;
+    --clight-blue-three: #0079a9;
+    --cdark-blue: var(--cblue);
 }
 
-.pg-container {
-    padding-top: 82px;
+body {
+    font-family: "Montserrat", sans-serif !important;
+    background-color: #ffffff;
 }
