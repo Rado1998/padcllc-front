@@ -4,7 +4,7 @@
             <div class="topbar-container">
                 <app-navbar></app-navbar>
                 <div class="tb-bottom" #tbBottom>
-                    <ngx-slick-carousel class="left carousel update-animation" #slickElement="slick-carousel" [config]="slideConfig" (beforeChange)="beforeChange()" (afterChange)="afterChange()" (slickInit)="slickInit()">
+                    <ngx-slick-carousel class="left carousel update-animation" #slickElement="slick-carousel" [config]="slideConfig" (beforeChange)="beforeChange()" (afterChange)="afterChange()" (init)="slickInit()">
                         <div ngxSlickItem *ngFor="let slide of slides" class="slide">
                             <div class="slide-inner">
                                 <p class="sub-text">Get the web's modern capabilities</p>

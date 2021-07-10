@@ -31,9 +31,9 @@ export class OurProjectsViewComponent implements OnInit, OnDestroy {
 
     ngOnInit() { }
 
-    public slickInit($event): void {
-        console.log($event);
+    public slickInit(): void {
+        this.slickModal.unslick = () => { };
     }
 
-    ngOnDestroy() {}
+    ngOnDestroy() { }
 }

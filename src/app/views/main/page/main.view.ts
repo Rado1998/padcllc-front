@@ -2,11 +2,8 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, Vie
 import { NavigationEnd, Router, RouterEvent, RouterOutlet } from '@angular/router';
 import { navAnimations } from '@animations/animations';
 import { navigationSteps } from '@globals/navigation-steps';
-import { Subject } from 'rxjs';
-import { filter, takeUntil } from 'rxjs/operators';
-
-
-
+import { fromEvent, Subject } from 'rxjs';
+import { filter, takeUntil, throttleTime } from 'rxjs/operators';
 
 @Component({
     selector: 'app-main-view',
@@ -26,12 +23,11 @@ export class MainViewComponent implements OnInit, AfterViewInit, OnDestroy {
     ) { }
 
     ngOnInit() {
-        // fromEvent(window, 'wheel')
-        //     .pipe(throttleTime(1300))
-        //     .subscribe((e: WheelEvent) => {
-        //         console.log(e);
-        //         this._handleWheelEvent(e);
-        //     });
+        fromEvent(window, 'wheel')
+            .pipe(throttleTime(1300))
+            .subscribe((e: WheelEvent) => {
+                this._handleWheelEvent(e);
+            });
     }
 
     ngAfterViewInit() {

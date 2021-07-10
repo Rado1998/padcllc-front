@@ -20,6 +20,7 @@ export class HomeViewComponent implements OnInit, OnDestroy {
   ];
   slideConfig = {};
 
+
   constructor() {
     this.slideConfig = {
       arrows: false,
@@ -35,6 +36,7 @@ export class HomeViewComponent implements OnInit, OnDestroy {
   ngOnInit() { }
 
   public slickInit(): void {
+    this.slickModal.unslick = () => { };
   }
 
   public beforeChange(): void {
@@ -47,5 +49,6 @@ export class HomeViewComponent implements OnInit, OnDestroy {
     this._tbBottomElement.nativeElement.classList.add('update-animation');
   }
 
-  ngOnDestroy() { }
+  ngOnDestroy() {
+  }
 }
