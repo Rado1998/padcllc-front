@@ -1,4 +1,15 @@
 .pg-title {
     margin-top: 100px !important;
     position: relative;
+    &::after {
+        display: block;
+        transition: all 0.3s;
+        content: "";
+        height: 7px;
+        background: var(--cblue);
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        width: 110px;
+    }
 }

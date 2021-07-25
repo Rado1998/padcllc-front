@@ -2,5 +2,68 @@
     width: 100%;
     height: 100vh;
     &-container {
+        padding-left: 180px;
+        padding-right: 180px;
+        .pg-title {
+            text-align: center;
+            &:hover {
+                &::after {
+                    width: 270px;
+                }
+            }
+            &::after {
+                right: 0;
+                display: flex;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        .wwd-items {
+            margin-top: 200px;
+            .wwd-item {
+                height: 300px;
+                &-icon {
+                    width: 333px;
+                    height: 245px;
+                    position: relative;
+                    background-image: url("/assets/images/wwd/wwd-elipse.svg");
+                    background-repeat: no-repeat;
+                    background-position-x: center;
+                    &-inner {
+                        display: flex;
+                        height: 184px;
+                        &-img {
+                            width: 83px;
+                            height: 83px;
+                            margin: auto;
+                        }
+                    }
+                    &::before {
+                        background-image: url("/assets/images/wwd/wwd-d-elipse-1.svg");
+                        background-size: contain;
+                        background-position: bottom;
+                        background-repeat: no-repeat;
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        z-index: 1;
+                        transition: opacity 0.4s;
+                        transition-timing-function: ease-in;
+                    }
+                }
+                &:nth-child(2) {
+                    .wwd-item-icon {
+                        &::before {
+                            margin-top: -60px;
+                            background-image: url("/assets/images/wwd/wwd-d-elipse-2.svg");
+                            background-position: top;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

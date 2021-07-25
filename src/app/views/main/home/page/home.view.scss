@@ -68,8 +68,11 @@
                     padding-top: 40px;
                     margin-top: 25px;
                     position: relative;
+                    background-image: url("/assets/images/1.png");
+                    background-repeat: no-repeat;
+                    background-size: 0 0;
                     &::before {
-                        background-image: url('/assets/images/1.png');
+                        background-image: inherit;
                         background-size: contain;
                         background-position: right;
                         background-repeat: no-repeat;
@@ -160,7 +163,6 @@
     }
 }
 
-
 /* Firefox < 16 */
 
 @-moz-keyframes fadein {
@@ -171,7 +173,6 @@
         opacity: 1;
     }
 }
-
 
 /* Safari, Chrome and Opera > 12.1 */
 
@@ -184,7 +185,6 @@
     }
 }
 
-
 /* Internet Explorer */
 
 @-ms-keyframes fadein {
@@ -195,7 +195,6 @@
         opacity: 1;
     }
 }
-
 
 /* Opera < 12.1 */
 

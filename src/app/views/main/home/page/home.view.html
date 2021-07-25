@@ -4,18 +4,17 @@
             <div class="topbar-container">
                 <app-navbar></app-navbar>
                 <div class="tb-bottom" #tbBottom>
-                    <ngx-slick-carousel class="left carousel update-animation" #slickElement="slick-carousel" [config]="slideConfig" (beforeChange)="beforeChange()" (afterChange)="afterChange()" (init)="slickInit()">
+                    <ngx-slick-carousel class="left carousel" #slickElement="slick-carousel" [config]="slideConfig"
+                        (beforeChange)="beforeChange()" (afterChange)="afterChange()" (init)="slickInit()">
                         <div ngxSlickItem *ngFor="let slide of slides" class="slide">
                             <div class="slide-inner">
                                 <p class="sub-text">Get the web's modern capabilities</p>
-                                <h4 class="slide-title">We Design. We Develop. We Inspire.</h4>
-                                <p class="slide-desc">Get the web's modern capabilities on your own sites and apps with useful guidance and analysis from padcllc.com.
+                                <h4 class="slide-title">We Design. We Develop. <br>We Inspire.</h4>
+                                <p class="slide-desc">Get the web's modern capabilities on your own sites and apps with
+                                    useful guidance and analysis from padcllc.com.
                             </div>
                         </div>
                     </ngx-slick-carousel>
-                    <!-- <div class="right w-50">
-                        <img class="w-100" src="/assets/images/1.png" />
-                    </div> -->
                     <a [appInlineSvg]="'arrow-down'" class="arrow-down" routerLink="/our-projects">
                     </a>
                 </div>

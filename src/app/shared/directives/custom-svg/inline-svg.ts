@@ -12,6 +12,7 @@ import { InlineSvgService } from './inline-svg.service';
 export class InlineSvgDirective implements OnInit, OnDestroy {
     private _unsubscribe$: Subject<void> = new Subject<void>();
     @Input('appInlineSvg') private _svgName: string = '';
+    @Input() public path: string = 'icons';
 
     constructor(
         private _inlineSvgService: InlineSvgService,
@@ -24,7 +25,7 @@ export class InlineSvgDirective implements OnInit, OnDestroy {
 
     private _getSvg(): void {
         if (this._svgName) {
-            this._inlineSvgService.getSvg(this._svgName)
+            this._inlineSvgService.getSvg(this._svgName, this.path)
                 .pipe(
                     takeUntil(this._unsubscribe$),
                     tap((res) => {
