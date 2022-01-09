@@ -1,20 +1,64 @@
-<div class="our-projects">
-    <div class="our-projects-container pg-container">
-        <h1 class="pg-title">Our Projects</h1>
-        <div class="slider-container">
-            <ngx-slick-carousel class="carousel" #slickElement="slick-carousel" [config]="slideConfig" (init)="slickInit()">
-                <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-                    <div class="slide-inner">
-                        <h4 class="slide-title">WASHERBOT</h4>
-                        <p class="slide-desc">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use
-                            a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
-                        </p>
-                        <button class="btn view-more-btn">
-              View More
-            </button>
-                    </div>
+<div id="ourprojects" class="ourProjects ">
+    <div class="container">
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <h4 class="subtitle">OUR PROJECTS</h4>
+                    <div class="proj-sep mb-5 mt-3"></div>
+                    <h3 class="title">WASHBOT</h3>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage
+                        of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                    <a class="btn-solid-reg" href="#contact">View More</a>
                 </div>
-            </ngx-slick-carousel>
+                <div class="carousel-item">
+                    <h4 class="subtitle">OUR PROJECTS</h4>
+                    <div class="proj-sep mb-5 mt-3"></div>
+                    <h3 class="title">WASHBOT</h3>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage
+                        of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                    <a class="btn-solid-reg" href="#contact">View More</a>
+                </div>
+                <div class="carousel-item">
+                    <h4 class="subtitle">OUR PROJECTS</h4>
+                    <div class="proj-sep mb-5 mt-3"></div>
+                    <h3 class="title">WASHBOT</h3>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage
+                        of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                    <a class="btn-solid-reg" href="#contact">View More</a>
+                </div>
+            </div>
+            <div class="d-flex">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <!-- <div class="polygon-mobile">
+
+                <img class="" src="/assets/images/Polygon-2.svg" alt="polygon">
+                <img class="" src="/assets/images/Polygon-3.svg" alt="polygon">
+            </div> -->
+        <div class="polygons">
+            <div class="polygons_item polygon1">
+                <img class="" src="/assets/images/Polygon-1.svg" alt="polygon">
+            </div>
+            <div class="polygons_item polygon2">
+                <img class="" src="/assets/images/Polygon-2.svg" alt="polygon">
+            </div>
+            <div class="polygons_item polygon3">
+                <img class="" src="/assets/images/Polygon-3.svg" alt="polygon">
+            </div>
         </div>
     </div>
 </div>

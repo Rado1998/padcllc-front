@@ -17,6 +17,7 @@
             animation-duration: 0.5s;
             animation-delay: 0.5s;
             animation-fill-mode: forwards;
+            background-color: rgba(#fff, 0.9) !important;
         }
         .hide-navbar {
             animation-name: hideNavbarAnimation;

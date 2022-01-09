@@ -4,19 +4,72 @@
             <div class="topbar-container">
                 <app-navbar></app-navbar>
                 <div class="tb-bottom" #tbBottom>
-                    <ngx-slick-carousel class="left carousel" #slickElement="slick-carousel" [config]="slideConfig"
-                        (beforeChange)="beforeChange()" (afterChange)="afterChange()" (init)="slickInit()">
-                        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-                            <div class="slide-inner">
-                                <p class="sub-text">Get the web's modern capabilities</p>
-                                <h4 class="slide-title">We Design. We Develop. <br>We Inspire.</h4>
-                                <p class="slide-desc">Get the web's modern capabilities on your own sites and apps with
-                                    useful guidance and analysis from padcllc.com.
+                    <!-- Header -->
+                    <header id="header" class="header h-100">
+                        <div class="container">
+                            <div class="row mt-5">
+                                <div class="col-lg-6">
+                                    <div class="text-container">
+                                        <h5>Get the web's modern capabilities</h5>
+                                        <h1 class="h1-large">We Design. We Develop. We <span class="inspire">Inspire</span>.
+                                        </h1>
+                                        <p class="p-large">Get the web's modern capabilities on your own sites and apps with useful guidance and analysis from padcllc.com.</p>
+                                        <a class="btn-solid-lg" href="#services">Offered services</a>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="image-container">
+                                        <img class="img-fluid w-100" src="/assets/images/padc-header-img.jpg" alt="PADC">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </ngx-slick-carousel>
-                    <a [appInlineSvg]="'arrow-down'" class="arrow-down" routerLink="/our-projects">
-                    </a>
+                    </header>
+
+                    <!-- mobile header -->
+
+                    <header id="header" class="mobile-header h-100">
+                        <div class="container">
+                            <div class="row mt-5">
+                                <div class="col-12">
+                                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <h5 class="text-white text-left">Get the web's modern capabilities</h5>
+                                                <h2 class="h1-large text-white text-left">We Design. We Develop. We
+                                                    <span class="inspire">Inspire</span>.</h2>
+                                                <p class="p-large text-white text-left mobile_text">Get the web's modern capabilities on your own sites and apps with useful guidance and analysis from padcllc.com.</p>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <h5 class="text-white text-left">Get the web's modern capabilities</h5>
+                                                <h2 class="h1-large text-white text-left">We Design. We Develop. We
+                                                    <span class="inspire">Inspire</span>.</h2>
+                                                <p class="p-large text-white text-left mobile_text">Get the web's modern capabilities on your own sites and apps with useful guidance and analysis from padcllc.com.</p>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <h5 class="text-white text-left">Get the web's modern capabilities</h5>
+                                                <h2 class="h1-large text-white text-left">We Design. We Develop. We
+                                                    <span class="inspire">Inspire</span>.</h2>
+                                                <p class="p-large text-white text-left mobile_text">Get the web's modern capabilities on your own sites and apps with useful guidance and analysis from padcllc.com.</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="carousel-indicators">
+                                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </header>
                 </div>
             </div>
         </header>
