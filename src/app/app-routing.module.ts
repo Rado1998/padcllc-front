@@ -9,7 +9,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, {
       initialNavigation: 'enabled',
-      useHash: true,
+      useHash: false,
     })
   ],
   exports: [RouterModule]
