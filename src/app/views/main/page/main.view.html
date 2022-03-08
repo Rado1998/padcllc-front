@@ -3,7 +3,9 @@
         <app-topbar></app-topbar>
     </section>
     <section class="main-container">
-        <router-outlet></router-outlet>
+        <div class="route-content" [@fadeAnimation]="getRouterOutletState(o)">
+            <router-outlet #o="outlet"></router-outlet>
+        </div>
     </section>
     <section class="footer">
         <app-footer></app-footer>

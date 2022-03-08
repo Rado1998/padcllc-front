@@ -28,26 +28,30 @@
                             "src/assets"
                         ],
                         "styles": [
+                            "src/assets/styles/bootstrap.min.css",
+                            "src/assets/styles/fontawesome-all.min.css",
+                            "node_modules/slick-carousel/slick/slick.scss",
+                            "node_modules/slick-carousel/slick/slick-theme.scss",
                             "src/styles.scss",
                             "src/assets/styles/_reset.scss",
                             "src/assets/styles/_variables.scss",
                             "src/assets/styles/_global.scss",
-                            "src/assets/styles/_response.scss",
-                            "src/assets/styles/bootstrap.min.css",
-                            "node_modules/slick-carousel/slick/slick.scss",
-                            "node_modules/slick-carousel/slick/slick-theme.scss"
+                            "src/assets/styles/_response.scss"
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.min.js",
-                            "node_modules/slick-carousel/slick/slick.min.js"
+                            "node_modules/slick-carousel/slick/slick.min.js",
+                            "src/assets/scripts/bootstrap.min.js"
                         ]
                     },
                     "configurations": {
                         "production": {
-                            "fileReplacements": [{
-                                "replace": "src/environments/environment.ts",
-                                "with": "src/environments/environment.prod.ts"
-                            }],
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.prod.ts"
+                                }
+                            ],
                             "optimization": true,
                             "outputHashing": "all",
                             "sourceMap": false,
@@ -56,7 +60,8 @@
                             "extractLicenses": true,
                             "vendorChunk": false,
                             "buildOptimizer": true,
-                            "budgets": [{
+                            "budgets": [
+                                {
                                     "type": "initial",
                                     "maximumWarning": "2mb",
                                     "maximumError": "5mb"
@@ -140,10 +145,12 @@
                     "configurations": {
                         "production": {
                             "outputHashing": "media",
-                            "fileReplacements": [{
-                                "replace": "src/environments/environment.ts",
-                                "with": "src/environments/environment.prod.ts"
-                            }],
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.prod.ts"
+                                }
+                            ],
                             "sourceMap": false,
                             "optimization": true
                         }

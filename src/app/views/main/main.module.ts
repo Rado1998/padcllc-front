@@ -9,7 +9,7 @@ import { FooterComponent, TopbarComponent } from './components';
 
 @NgModule({
     declarations: [
-        MainViewComponent,
+        ...MainRoutingModule.components,
         TopbarComponent,
         FooterComponent
     ],
