@@ -1,15 +1,21 @@
 import { NgModule } from '@angular/core';
+import { ContactUsComponent, FooterComponent } from '@components/index';
 
 import { InlineSvgDirective } from './directives';
 
 @NgModule({
     declarations: [
         /* DIRECTIVES */
-        InlineSvgDirective
+        InlineSvgDirective,
+        /* COMPONENTS */
+        FooterComponent,
+        ContactUsComponent
     ],
     imports: [],
     exports: [
-        InlineSvgDirective
+        InlineSvgDirective,
+        FooterComponent,
+        ContactUsComponent
     ]
 })
 export class SharedModule { }

@@ -5,8 +5,6 @@ import { PlatformService } from '@services/platform.service';
 import { fromEvent, Subject } from 'rxjs';
 import { debounceTime, map, takeUntil } from 'rxjs/operators';
 
-declare const google;
-
 @Component({
   selector: 'app-home-view',
   templateUrl: 'home.view.html',
@@ -25,9 +23,7 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
     private _platformService: PlatformService
   ) { }
 
-  ngOnInit(): void {
-    this._initMap();
-  }
+  ngOnInit(): void { }
 
   ngAfterViewInit(): void {
     this._animateOurProjectTriangles();
@@ -58,13 +54,6 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  private _initMap(): void {
-    const map = new google.maps.Map(document.getElementById('map') as HTMLElement, {
-      center: { lat: 40.828230, lng: 43.823510 },
-      zoom: 8,
-    });
-  }
-
   private _animateOurProjectTriangles(): void {
     fromEvent(window, 'mousemove')
       .pipe(
@@ -73,7 +62,9 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
           const polygons = Array.from(polygonsCollection) as HTMLElement[];
           const x = e.offsetX;
           const y = e.offsetY;
-          polygons[0].style.transform = `translate(-${x / 50}px, -${y / 50}px)`;
+          // polygons[0].style.transform = `translate(-${x / 50}px, -${y / 50}px)`;
+          // polygons[1].style.transform = `translate(${x / 30}px, -${y / 30}px)`;
+          // polygons[2].style.transform = `translate(${x / 15}px, ${y / 15}px)`;
         })
       ).subscribe();
   }
@@ -83,7 +74,7 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
     const wwidItems = Array.from(wwidItemsCollection);
     wwidItems.splice(0, 1);
     for (let i = 0; i <= index; i++) {
-      wwidItems[i].firstElementChild.classList.add('whatWeDo_item--img--active');
+      wwidItems[i]?.firstElementChild.classList.add('whatWeDo_item--img--active');
     }
   }
 
@@ -92,7 +83,7 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
     const wwidItems = Array.from(wwidItemsCollection);
     wwidItems.splice(0, 1);
     for (let i = 0; i <= wwidItems.length; i++) {
-      wwidItems[i].firstElementChild.classList.remove('whatWeDo_item--img--active');
+      wwidItems[i]?.firstElementChild.classList.remove('whatWeDo_item--img--active');
     }
   }
 

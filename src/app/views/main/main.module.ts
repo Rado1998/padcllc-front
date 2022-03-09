@@ -5,13 +5,12 @@ import { MainRoutingModule } from './main-routing.module';
 
 import { SharedModule } from '@shared/shared.module';
 
-import { FooterComponent, TopbarComponent } from './components';
+import { TopbarComponent } from './components';
 
 @NgModule({
     declarations: [
         ...MainRoutingModule.components,
-        TopbarComponent,
-        FooterComponent
+        TopbarComponent
     ],
     imports: [
         MainRoutingModule,

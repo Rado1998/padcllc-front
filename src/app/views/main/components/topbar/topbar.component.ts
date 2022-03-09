@@ -1,11 +1,12 @@
 import { ChangeDetectionStrategy, Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 import { PlatformService } from '@services/index';
 
 import { fromEvent, Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { filter, map, takeUntil } from 'rxjs/operators';
 
+declare const google;
 @Component({
     selector: 'app-topbar',
     templateUrl: 'topbar.component.html',
@@ -18,6 +19,8 @@ export class TopbarComponent implements OnInit, OnDestroy {
     @ViewChild('navbar')
     private _navbarElement: ElementRef<HTMLElement>;
 
+    public isNavbarOpen: boolean = false;
+
     constructor(
         private _router: Router,
         private _activatedRoute: ActivatedRoute,
@@ -28,7 +31,19 @@ export class TopbarComponent implements OnInit, OnDestroy {
         }
     }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this._handleRouteChanges();
+    }
+
+    private _handleRouteChanges(): void {
+        this._router.events
+            .pipe(
+                filter((e) => e instanceof NavigationEnd),
+                map(() => {
+                    this.isNavbarOpen = false;
+                })
+            ).subscribe();
+    }
 
     private _handleScrollEvent(): void {
         fromEvent(window, 'scroll', { capture: true })
@@ -59,6 +74,10 @@ export class TopbarComponent implements OnInit, OnDestroy {
             sectionId = '';
         }
         return secId === sectionId;
+    }
+
+    public onClickOpenNavbar(): void {
+        this.isNavbarOpen = !this.isNavbarOpen;
     }
 
     ngOnDestroy() {
