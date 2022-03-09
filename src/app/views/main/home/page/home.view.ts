@@ -1,9 +1,9 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PlatformService } from '@services/platform.service';
-import { SlickCarouselComponent } from 'ngx-slick-carousel';
-import { Subject, timer } from 'rxjs';
-import { debounce, debounceTime, takeUntil } from 'rxjs/operators';
+
+import { fromEvent, Subject } from 'rxjs';
+import { debounceTime, map, takeUntil } from 'rxjs/operators';
 
 declare const google;
 
@@ -16,29 +16,21 @@ declare const google;
 export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
   private _unsubscribe$: Subject<void> = new Subject<void>();
 
-  @ViewChild('slickModal') slickModal: SlickCarouselComponent;
-  slides = [{}, {}, {}, {}, {}, {}, {}, {}];
-  slideConfig = {};
-
+  @ViewChild('wwdContainer')
+  private _wwdContainerElement: ElementRef<HTMLElement>;
+  @ViewChild('polygonsContainer')
+  private _polygonElement: ElementRef<HTMLElement>;
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _platformService: PlatformService
-  ) {
-    this.slideConfig = {
-      infinite: false,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      dots: false,
-      autoplay: false,
-      autoplaySpeed: 2000
-    };
-  }
+  ) { }
 
   ngOnInit(): void {
     this._initMap();
   }
 
   ngAfterViewInit(): void {
+    this._animateOurProjectTriangles();
     this._handleRouteChanges();
   }
 
@@ -73,12 +65,35 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
 
-  next() {
-    this.slickModal.slickNext();
+  private _animateOurProjectTriangles(): void {
+    fromEvent(window, 'mousemove')
+      .pipe(
+        map((e: MouseEvent) => {
+          const polygonsCollection = this._polygonElement.nativeElement.children;
+          const polygons = Array.from(polygonsCollection) as HTMLElement[];
+          const x = e.offsetX;
+          const y = e.offsetY;
+          polygons[0].style.transform = `translate(-${x / 50}px, -${y / 50}px)`;
+        })
+      ).subscribe();
   }
 
-  prev() {
-    this.slickModal.slickPrev();
+  public onMouseOverWWDItem(index: number): void {
+    const wwidItemsCollection = this._wwdContainerElement.nativeElement.children;
+    const wwidItems = Array.from(wwidItemsCollection);
+    wwidItems.splice(0, 1);
+    for (let i = 0; i <= index; i++) {
+      wwidItems[i].firstElementChild.classList.add('whatWeDo_item--img--active');
+    }
+  }
+
+  public onMouseOutWWDItems(): void {
+    const wwidItemsCollection = this._wwdContainerElement.nativeElement.children;
+    const wwidItems = Array.from(wwidItemsCollection);
+    wwidItems.splice(0, 1);
+    for (let i = 0; i <= wwidItems.length; i++) {
+      wwidItems[i].firstElementChild.classList.remove('whatWeDo_item--img--active');
+    }
   }
 
   ngOnDestroy() {

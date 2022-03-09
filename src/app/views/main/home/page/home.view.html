@@ -138,7 +138,7 @@
             <img class="" src="/assets/images/Polygon-2.svg" alt="polygon">
             <img class="" src="/assets/images/Polygon-3.svg" alt="polygon">
         </div> -->
-        <div class="polygons">
+        <div class="polygons" #polygonsContainer>
             <div class="polygons_item polygon1">
                 <img class="" src="/assets/images/Polygon-1.svg" alt="polygon">
             </div>
@@ -155,12 +155,12 @@
 
 <!-- What we do-->
 <div id="whatwedo" class="whatWeDo mt-5">
-    <div class="container">
+    <div class="container" (mouseout)="onMouseOutWWDItems()" #wwdContainer>
         <div class="whatWeDo-title">
             <h3> WHAT WE DO</h3>
             <div class="do-sep mb-5 mt-3"></div>
         </div>
-        <div class="whatWeDo_item">
+        <div class="whatWeDo_item" (mouseover)="onMouseOverWWDItem(0)">
             <div class="whatWeDo_item--img">
                 <div class="polygon-border up"></div>
                 <div class="img">
@@ -169,11 +169,12 @@
             </div>
             <div class="col-lg-12 col-sm-10">
                 <h5>01/ <span>DISCOVER</span></h5>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                    the
                     industry's.</p>
             </div>
         </div>
-        <div class="whatWeDo_item">
+        <div class="whatWeDo_item" (mouseover)="onMouseOverWWDItem(1)">
             <div class="whatWeDo_item--img">
                 <div class="circle-border left"></div>
                 <div class="img">
@@ -183,11 +184,12 @@
             </div>
             <div class="col-lg-12 col-sm-10">
                 <h5>02/ <span>DESIGN</span></h5>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                    the
                     industry's.</p>
             </div>
         </div>
-        <div class="whatWeDo_item">
+        <div class="whatWeDo_item" (mouseover)="onMouseOverWWDItem(2)">
             <div class="whatWeDo_item--img">
                 <div class="img">
                     <img class="" src="/assets/images/deployment.svg" alt="alternative">
@@ -196,11 +198,12 @@
             </div>
             <div class="col-lg-12 col-sm-10">
                 <h5>03/ <span>DEVELOP</span></h5>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                    the
                     industry's.</p>
             </div>
         </div>
-        <div class="whatWeDo_item">
+        <div class="whatWeDo_item" (mouseover)="onMouseOverWWDItem(3)">
             <div class="whatWeDo_item--img">
                 <div class="img">
                     <img class="" src="/assets/images/deployment.svg" alt="alternative">
@@ -209,7 +212,8 @@
             </div>
             <div class="col-lg-12  col-sm-10">
                 <h5>04/ <span>DEPLOY</span></h5>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                    the
                     industry's.</p>
             </div>
         </div>

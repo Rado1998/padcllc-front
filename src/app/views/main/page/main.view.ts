@@ -35,7 +35,6 @@ export class MainViewComponent implements OnInit, OnDestroy {
                     if (secondUrl.includes('?')) {
                         secondUrl = secondUrl.slice(0, secondUrl.indexOf('?'));
                     }
-                    console.log(firstUrl, secondUrl);
                     return firstUrl === secondUrl;
                 }),
                 switchMap(() => {
