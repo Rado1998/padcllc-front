@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import { MainViewComponent } from './page/main.view';
 import { MainRoutingModule } from './main-routing.module';
 
 import { SharedModule } from '@shared/shared.module';
@@ -14,7 +14,8 @@ import { TopbarComponent } from './components';
     ],
     imports: [
         MainRoutingModule,
-        SharedModule
+        SharedModule,
+        CommonModule
     ],
     exports: []
 })

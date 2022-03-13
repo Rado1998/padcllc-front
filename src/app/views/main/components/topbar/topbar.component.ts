@@ -26,14 +26,14 @@ export class TopbarComponent implements OnInit, OnDestroy {
     private _unsubscribe$: Subject<void> = new Subject<void>();
     @ViewChild('navbar')
     private _navbarElement: ElementRef<HTMLElement>;
+    private _isNavbarOpen: boolean = false;
 
-    public isNavbarOpen: boolean = false;
+    public isNavbarOpenEvent: Subject<boolean> = new Subject<boolean>();
 
     constructor(
         private _router: Router,
         private _activatedRoute: ActivatedRoute,
         private _platformService: PlatformService,
-        private _changeDetectorRef: ChangeDetectorRef
     ) {
         if (this._platformService.isBrowser) {
             this._handleScrollEvent();
@@ -49,8 +49,8 @@ export class TopbarComponent implements OnInit, OnDestroy {
             .pipe(
                 filter((e) => e instanceof NavigationEnd),
                 map(() => {
-                    this.isNavbarOpen = false;
-                    this._changeDetectorRef.detectChanges();
+                    this._isNavbarOpen = false;
+                    this.isNavbarOpenEvent.next(false);
                 })
             ).subscribe();
     }
@@ -87,7 +87,8 @@ export class TopbarComponent implements OnInit, OnDestroy {
     }
 
     public onClickOpenNavbar(): void {
-        this.isNavbarOpen = !this.isNavbarOpen;
+        this._isNavbarOpen = !this._isNavbarOpen;
+        this.isNavbarOpenEvent.next(this._isNavbarOpen);
     }
 
     ngOnDestroy() {
