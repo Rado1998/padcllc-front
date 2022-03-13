@@ -1,5 +1,6 @@
 import {
     ChangeDetectionStrategy,
+    ChangeDetectorRef,
     Component,
     ElementRef,
     OnDestroy,
@@ -31,7 +32,8 @@ export class TopbarComponent implements OnInit, OnDestroy {
     constructor(
         private _router: Router,
         private _activatedRoute: ActivatedRoute,
-        private _platformService: PlatformService
+        private _platformService: PlatformService,
+        private _changeDetectorRef: ChangeDetectorRef
     ) {
         if (this._platformService.isBrowser) {
             this._handleScrollEvent();
@@ -48,6 +50,7 @@ export class TopbarComponent implements OnInit, OnDestroy {
                 filter((e) => e instanceof NavigationEnd),
                 map(() => {
                     this.isNavbarOpen = false;
+                    this._changeDetectorRef.detectChanges();
                 })
             ).subscribe();
     }

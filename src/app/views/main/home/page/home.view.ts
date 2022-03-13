@@ -62,7 +62,6 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
           const polygons = Array.from(polygonsCollection) as HTMLElement[];
           const x = e.screenX;
           const y = e.screenY;
-          console.log(x, y);
           polygons[0].style.transform = `translate(-${x / 80}px, -${y / 80}px)`;
           // polygons[1].style.transform = `translate(${x / 30}px, -${y / 30}px)`;
           polygons[2].style.transform = `translate(${x / 80}px, ${y / 80}px)`;
