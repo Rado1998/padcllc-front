@@ -19,7 +19,7 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/home" routerLinkActive="active"
                         [class.active]="checkIfItsActiveRoute('ourprojects')"
-                        [queryParams]="{'sectionId':'ourprojects'}">Our Projects</a>
+                        [queryParams]="{'sectionId':'ourprojects'}">Projects</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/home" routerLinkActive="active"
@@ -29,10 +29,7 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/home" routerLinkActive="active"
                         [class.active]="checkIfItsActiveRoute('ourservices')"
-                        [queryParams]="{'sectionId':'ourservices'}">Our Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/trainings" routerLinkActive="active">Trainings</a>
+                        [queryParams]="{'sectionId':'ourservices'}">Services</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/home" routerLinkActive="active"
@@ -42,12 +39,22 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/home" routerLinkActive="active"
                         [class.active]="checkIfItsActiveRoute('ourteam')" [queryParams]="{'sectionId':'partners'}"
-                        [queryParams]="{'sectionId':'ourteam'}">Our Team</a>
+                        [queryParams]="{'sectionId':'ourteam'}">Team</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/home" routerLinkActive="active"
                         [class.active]="checkIfItsActiveRoute('contact')"
-                        [queryParams]="{'sectionId':'contact'}">Contact Us</a>
+                        [queryParams]="{'sectionId':'contact'}">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/trainings" routerLinkActive="active">Trainings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/career" routerLinkActive="active">Career</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bordered-item" href="https://blog.padcllc.com" target="_blank"
+                        routerLinkActive="active">BLOG</a>
                 </li>
             </ul>
         </div>

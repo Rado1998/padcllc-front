@@ -60,11 +60,12 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
         map((e: MouseEvent) => {
           const polygonsCollection = this._polygonElement.nativeElement.children;
           const polygons = Array.from(polygonsCollection) as HTMLElement[];
-          const x = e.offsetX;
-          const y = e.offsetY;
-          // polygons[0].style.transform = `translate(-${x / 50}px, -${y / 50}px)`;
+          const x = e.screenX;
+          const y = e.screenY;
+          console.log(x, y);
+          polygons[0].style.transform = `translate(-${x / 80}px, -${y / 80}px)`;
           // polygons[1].style.transform = `translate(${x / 30}px, -${y / 30}px)`;
-          // polygons[2].style.transform = `translate(${x / 15}px, ${y / 15}px)`;
+          polygons[2].style.transform = `translate(${x / 80}px, ${y / 80}px)`;
         })
       ).subscribe();
   }
@@ -74,8 +75,9 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
     const wwidItems = Array.from(wwidItemsCollection);
     wwidItems.splice(0, 1);
     for (let i = 0; i <= index; i++) {
-      wwidItems[i]?.firstElementChild.classList.add('whatWeDo_item--img--active');
+      wwidItems[i]?.classList.add('whatWeDo_item--img--active');
     }
+    wwidItems[index]?.classList.add('whatWeDo_item--img--active--last');
   }
 
   public onMouseOutWWDItems(): void {
@@ -83,7 +85,8 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
     const wwidItems = Array.from(wwidItemsCollection);
     wwidItems.splice(0, 1);
     for (let i = 0; i <= wwidItems.length; i++) {
-      wwidItems[i]?.firstElementChild.classList.remove('whatWeDo_item--img--active');
+      wwidItems[i]?.classList.remove('whatWeDo_item--img--active');
+      wwidItems[i]?.classList.remove('whatWeDo_item--img--active--last');
     }
   }
 

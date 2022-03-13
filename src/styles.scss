@@ -1176,7 +1176,7 @@ figure.effect-team:hover p {
 
 .polygon3 {
     position: absolute;
-    bottom: -6%;
+    bottom: 9%;
     right: 13%;
 }
 
@@ -1245,9 +1245,32 @@ figure.effect-team:hover p {
 }
 
 .whatWeDo_item--img--active {
-    border-color: #00c2df;
-    .img {
-        border: 2px solid #00c2df;
+    .whatWeDo_item--img {
+        border-color: #00c2df;
+        .img {
+            border: 2px solid #00c2df;
+        }
+        .circle-border {
+            border-color: #00c2df;
+            background-color: #00c2df;
+        }
+    }
+}
+
+.whatWeDo_item--img--active--last {
+    .whatWeDo_item--img {
+        .circle-border.right {
+            animation: pulse-animation 1s infinite;
+        }
+    }
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(#00a8c9, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 0 20px rgba(#00a8c9, 0);
     }
 }
 

@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
-import { ContactUsComponent, FooterComponent } from '@components/index';
+import {
+    ContactUsComponent,
+    FooterComponent,
+    SendRequestComponent
+} from '@components/index';
 
 import { InlineSvgDirective } from './directives';
 
@@ -9,13 +13,15 @@ import { InlineSvgDirective } from './directives';
         InlineSvgDirective,
         /* COMPONENTS */
         FooterComponent,
-        ContactUsComponent
+        ContactUsComponent,
+        SendRequestComponent
     ],
     imports: [],
     exports: [
         InlineSvgDirective,
         FooterComponent,
-        ContactUsComponent
+        ContactUsComponent,
+        SendRequestComponent
     ]
 })
 export class SharedModule { }

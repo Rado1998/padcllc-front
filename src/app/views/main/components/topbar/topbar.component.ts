@@ -1,4 +1,12 @@
-import { ChangeDetectionStrategy, Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    OnDestroy,
+    OnInit,
+    ViewChild,
+    ViewEncapsulation
+} from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 import { PlatformService } from '@services/index';
@@ -6,7 +14,6 @@ import { PlatformService } from '@services/index';
 import { fromEvent, Subject } from 'rxjs';
 import { filter, map, takeUntil } from 'rxjs/operators';
 
-declare const google;
 @Component({
     selector: 'app-topbar',
     templateUrl: 'topbar.component.html',
