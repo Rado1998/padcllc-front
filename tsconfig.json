@@ -19,6 +19,9 @@
       "@env": [
         "src/environments/environment"
       ],
+      "@api-services/*": [
+        "src/app/core/api-services/*"
+      ],
       "@animations/*": [
         "src/app/core/animations/*"
       ],
@@ -57,7 +60,7 @@
       ],
       "@shared/*": [
         "src/app/shared/*"
-      ],
+      ]
     }
   },
   "angularCompilerOptions": {

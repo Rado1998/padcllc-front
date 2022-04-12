@@ -2,8 +2,11 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild, Vie
 import { ActivatedRoute } from '@angular/router';
 import { PlatformService } from '@services/platform.service';
 
-import { fromEvent, Subject } from 'rxjs';
+import { forkJoin, fromEvent, Observable, Subject } from 'rxjs';
 import { debounceTime, map, takeUntil } from 'rxjs/operators';
+
+import { BaseAPIService } from '@api-services/index';
+import { IProject } from '@models/projects';
 
 @Component({
   selector: 'app-home-view',
@@ -13,21 +16,43 @@ import { debounceTime, map, takeUntil } from 'rxjs/operators';
 })
 export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
   private _unsubscribe$: Subject<void> = new Subject<void>();
+  public projects: IProject[] = [];
+
+  public slideConfig = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    speed: 300,
+    dots: true
+  };
 
   @ViewChild('wwdContainer')
   private _wwdContainerElement: ElementRef<HTMLElement>;
   @ViewChild('polygonsContainer')
   private _polygonElement: ElementRef<HTMLElement>;
+
   constructor(
+    private _baseAPIService: BaseAPIService,
     private _activatedRoute: ActivatedRoute,
     private _platformService: PlatformService
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this._loadInitalData();
+  }
 
   ngAfterViewInit(): void {
     this._animateOurProjectTriangles();
     this._handleRouteChanges();
+  }
+
+  private _loadInitalData(): void {
+    forkJoin([
+      this._getProjects()
+    ])
+      .pipe(
+        takeUntil(this._unsubscribe$),
+      ).subscribe();
   }
 
   private _handleRouteChanges(): void {
@@ -39,6 +64,17 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
       .subscribe(() => {
         this._setScrollPosition();
       });
+  }
+
+  private _getProjects(): Observable<void> {
+    return this._baseAPIService.main.getOurProjects()
+      .pipe(
+        map(({ data }) => {
+          this.projects = data;
+          console.log('data', data);
+        })
+      );
+
   }
 
   private _setScrollPosition(): void {
