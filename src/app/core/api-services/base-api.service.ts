@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { IProject } from '@models/projects';
-import { Observable } from 'rxjs';
 
 import { MainService } from './main-api.service';
+import { TrainingsService } from './trainings.service';
 
 @Injectable({
     providedIn: 'root'
@@ -10,7 +9,8 @@ import { MainService } from './main-api.service';
 export class BaseAPIService {
 
     constructor(
-        public main: MainService
+        public main: MainService,
+        public trainings: TrainingsService
     ) { }
 
 }

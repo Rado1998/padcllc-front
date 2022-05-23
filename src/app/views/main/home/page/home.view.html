@@ -76,12 +76,12 @@
 <div id="ourprojects" class="ourProjects ">
     <div class="container">
         <div class="carousel slide">
+            <h4 class="subtitle">OUR PROJECTS</h4>
+            <div class="proj-sep mb-5 mt-3"></div>
             <ngx-slick-carousel class="carousel-inner" #slickModal="slick-carousel" [config]="slideConfig">
                 <div ngxSlickItem *ngFor="let item of projects;let ind = index" [class.active]="ind == 0">
-                    <h4 class="subtitle">OUR PROJECTS</h4>
-                    <div class="proj-sep mb-5 mt-3"></div>
                     <h3 class="title">{{item.title}}</h3>
-                    <p>{{item.description}}</p>
+                    <p [innerHTML]="item.description"></p>
                     <!-- <a class="btn-solid-reg" href="#contact">View More</a> -->
                 </div>
             </ngx-slick-carousel>
@@ -122,9 +122,9 @@
             </div>
             <div class="col-lg-12 col-sm-10">
                 <h5>01/ <span>DISCOVER</span></h5>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                    the
-                    industry's.</p>
+                <p>We do requirement analysis for each project. We identify the current problems by getting input from
+                    customers, salespeople, industry experts and programmers.
+                </p>
             </div>
         </div>
         <div class="whatWeDo_item" (mouseover)="onMouseOverWWDItem(1)">
@@ -137,9 +137,9 @@
             </div>
             <div class="col-lg-12 col-sm-10">
                 <h5>02/ <span>DESIGN</span></h5>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                    the
-                    industry's.</p>
+                <p>We plan and design what we want and how we will get it done. Here we turn the software specifications
+                    into a design plan: Design Specification.
+                </p>
             </div>
         </div>
         <div class="whatWeDo_item" (mouseover)="onMouseOverWWDItem(2)">
@@ -151,9 +151,9 @@
             </div>
             <div class="col-lg-12 col-sm-10">
                 <h5>03/ <span>DEVELOP</span></h5>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                    the
-                    industry's.</p>
+                <p>We create what we want. In this stage our developers stick to the agreed blueprint and follow our
+                    guidelines about the code style and practices.
+                </p>
             </div>
         </div>
         <div class="whatWeDo_item" (mouseover)="onMouseOverWWDItem(3)">
@@ -165,9 +165,8 @@
             </div>
             <div class="col-lg-12  col-sm-10">
                 <h5>04/ <span>DEPLOY</span></h5>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                    the
-                    industry's.</p>
+                <p>We deploy the software to the production environment. However, many of our customers request to move
+                    the product through different deployment environments: testing, staging.</p>
             </div>
         </div>
     </div>
@@ -185,6 +184,32 @@
         </div>
         <div class="row mt-5">
             <div class="col-lg-4 col-sm-12">
+                <div class="mobile">
+                    <h3 class="text-white p-3">Mobile</h3>
+                    <div class="row px-3">
+                        <div class="service-type">TypeScript</div>
+                        <div class="service-type">React Native</div>
+                        <div class="service-type">Dart</div>
+                        <div class="service-type">Flutter</div>
+                        <div class="service-type">Kotlin</div>
+                        <div class="service-type">Android</div>
+                    </div>
+                </div>
+                <div class="mt-3 gaming">
+                    <h3 class="text-white p-3">Gaming</h3>
+                    <div>
+                        <div class="row px-3">
+                            <div class="service-type">C#</div>
+                            <div class="service-type">Unity</div>
+                            <div class="service-type">3D Max</div>
+                            <div class="service-type">Blender</div>
+                            <div class="service-type">Maya</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+
                 <div class="web">
                     <h3 class="text-white p-3">Web</h3>
                     <div>
@@ -199,51 +224,22 @@
                             <div class="service-type">PYTHON</div>
                             <div class="service-type">Django</div>
                         </div>
-                    </div>
-                </div>
-                <div class="mt-3 gaming">
-                    <h3 class="text-white p-3">Gaming</h3>
-                    <div>
-                        <h5 class="text-white px-3">Frontend</h5>
                         <div class="row px-3">
-                            <div class="gaming-type">Angular 2+</div>
-                            <div class="gaming-type">ReactJs</div>
-                            <div class="gaming-type">HTML5/CSS3</div>
+                            <div class="service-type">PHP</div>
+                            <div class="service-type">Larevel</div>
                         </div>
-                        <h5 class="text-white px-3">Backend</h5>
                         <div class="row px-3">
-                            <div class="gaming-type">PYTHON</div>
-                            <div class="gaming-type">Django</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-12">
-                <div class="mobile">
-                    <h3 class="text-white p-3">Mobile</h3>
-                    <div>
-                        <h5 class="text-white px-3">Frontend</h5>
-                        <div class="row px-3">
-                            <div class="service-type">Angular 2+</div>
-                            <div class="service-type">ReactJs</div>
-                            <div class="service-type">HTML5/CSS3</div>
-                        </div>
-                        <h5 class="text-white px-3">Backend</h5>
-                        <div class="row px-3">
-                            <div class="service-type">PYTHON</div>
-                            <div class="service-type">Django</div>
+                            <div class="service-type">Typescript</div>
+                            <div class="service-type">Nest JS</div>
                         </div>
                     </div>
                 </div>
                 <div class="mt-3 ui-ux">
                     <h3 class="text-white p-3">UI/UX</h3>
-                    <div>
-                        <h5 class="text-white px-3">Frontend</h5>
-                        <div class="row px-3">
-                            <div class="gaming-type">Angular 2+</div>
-                            <div class="gaming-type">ReactJs</div>
-                            <div class="gaming-type">HTML5/CSS3</div>
-                        </div>
+                    <div class="row px-3">
+                        <div class="gaming-type">Photoshop</div>
+                        <div class="gaming-type">Figma</div>
+                        <div class="gaming-type">Zeplin</div>
                     </div>
                 </div>
             </div>
@@ -251,16 +247,18 @@
                 <div class="dev-ops">
                     <h3 class="text-white p-3">DevOps</h3>
                     <div>
-                        <h5 class="text-white px-3">Frontend</h5>
                         <div class="row px-3">
-                            <div class="service-type">Angular 2+</div>
-                            <div class="service-type">ReactJs</div>
-                            <div class="service-type">HTML5/CSS3</div>
-                        </div>
-                        <h5 class="text-white px-3">Backend</h5>
-                        <div class="row px-3">
-                            <div class="service-type">PYTHON</div>
-                            <div class="service-type">Django</div>
+                            <div class="service-type">Terraform</div>
+                            <div class="service-type">Docker</div>
+                            <div class="service-type">Kubernetes</div>
+                            <div class="service-type">Ansible</div>
+                            <div class="service-type">GitHub Actions</div>
+                            <div class="service-type">GitLab CI/CD</div>
+                            <div class="service-type">Jenkins</div>
+                            <div class="service-type">AWS</div>
+                            <div class="service-type">Azure</div>
+                            <div class="service-type">GCP</div>
+
                         </div>
                     </div>
                 </div>

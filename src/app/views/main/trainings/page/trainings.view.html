@@ -8,16 +8,17 @@
                             Trainings</span>
                     </h2>
                     <div class="padc-sep mb-5 mt-3"></div>
-                    <p class="p-large text-center lh-lg">There are many variations of passages of Lorem Ipsum available,
-                        but the majority have suffered alteration in some form, by injected humour, or randomised words
-                        which don't look even slightly believable. If you are going to use
-                        a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the
-                        middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks
-                        as necessary, making this the first
-                        true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a
-                        handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The
-                        generated Lorem Ipsum is therefore always
-                        free from repetition, injected humour, or non-characteristic words etc.</p>
+                    <p class="p-large text-center lh-lg">Since 2020, PADC organizes bunch of training for different
+                        stacks: Web/Mobile development, Manual QA, Automation QA, DevOps Engineering, Software
+                        Engineering, etc… The duration of the training is different: depending on the stack. Here it is
+                        the short list of the stack:
+                        Web Development: HTML/CSS, JavaScript, TypeScript, Angular, ReactJS, NestJS
+                        Mobile Development: HTML/CSS, JavaScript, React Native
+                        Software Engineering: Linux, Bash Scripting, Python, C++, Qt
+                        DevOps: Linux, Python, Jenkins, Docker, K8s, GitLab CI/CD, GitHub Actions, Terraform, Ansible,
+                        etc…
+                        QA: QA basics, principles, Python, Selenium, Tools(Jira, Git, etc…)
+                    </p>
 
                 </div>
             </div>
@@ -30,77 +31,14 @@
 <div id="request" class="form-1">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col">
+            <div class="col" *ngFor="let item of trainings">
                 <div class="grid tarinings-grid ">
                     <figure class="effect-layla">
-                        <img src="/assets/images/react-js.jpg" alt="ReactJs" />
+                        <img [src]="getImageUrl(item?.mediaFiles)" [alt]="item?.name" />
                         <figcaption>
-                            <p class="text-white"><a class="join-btn" routerLink="/trainings/1">Join</a></p>
-                            <p class="text-white">Angular trainning</p>
-                            <p class="text-white">29 DEC / 18:00</p>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            <div class="col">
-                <div class="grid tarinings-grid ">
-                    <figure class="effect-layla">
-                        <img src="/assets/images/react-js.jpg" alt="ReactJs" />
-                        <figcaption>
-                            <p class="text-white"><a class="join-btn" routerLink="/trainings/2">Join</a></p>
-                            <p class="text-white">Angular trainning</p>
-                            <p class="text-white">29 DEC / 18:00</p>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            <div class="col">
-                <div class="grid tarinings-grid ">
-                    <figure class="effect-layla">
-                        <img src="/assets/images/flutter.jpg" alt="Flutter" />
-                        <figcaption>
-                            <p class="text-white"><a class="join-btn" routerLink="/trainings/3">Join</a></p>
-                            <p class="text-white">Flutter trainning</p>
-                            <p class="text-white">29 DEC / 18:00</p>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-        </div>
-
-        <div class="row align-items-center">
-            <div class="col">
-                <div class="grid tarinings-grid ">
-                    <figure class="effect-layla">
-                        <img src="/assets/images/python.jpg" alt="PYTHON" />
-                        <figcaption>
-                            <p class="text-white"><a class="join-btn" routerLink="/trainings/4">Join</a></p>
-                            <p class="text-white">PYTHON trainning</p>
-                            <p class="text-white">29 DEC / 18:00</p>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            <div class="col">
-                <div class="grid tarinings-grid ">
-                    <figure class="effect-layla">
-                        <img src="/assets/images/react-native.jpg" alt="ReactNative" />
-                        <figcaption>
-                            <p class="text-white"><a class="join-btn" routerLink="/trainings/5">Join</a></p>
-                            <p class="text-white">ReactNative trainning</p>
-                            <p class="text-white">29 DEC / 18:00</p>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            <div class="col">
-                <div class="grid tarinings-grid ">
-                    <figure class="effect-layla">
-                        <img src="/assets/images/angular.jpg" alt="Angular" />
-                        <figcaption>
-                            <p class="text-white"><a class="join-btn" routerLink="/trainings/6">Join</a></p>
-                            <p class="text-white">Angular trainning</p>
-                            <p class="text-white">29 DEC / 18:00</p>
+                            <p class="text-white"><a class="join-btn" [routerLink]="['/trainings', item?.id]">Join</a></p>
+                            <p class="text-white">{{item?.name}}</p>
+                            <p class="text-white"> {{item?.date | date:'dd MMM / hh:mm' | uppercase}}</p>
                         </figcaption>
                     </figure>
                 </div>

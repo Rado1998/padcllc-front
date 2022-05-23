@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 
@@ -9,6 +10,7 @@ import { TrainingsRoutingModule } from './trainings-routing.module';
         ...TrainingsRoutingModule.components,
     ],
     imports: [
+        CommonModule,
         TrainingsRoutingModule,
         SharedModule
     ],
