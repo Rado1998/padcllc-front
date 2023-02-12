@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, InitialNavigation } from '@angular/router';
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('./views/main/main.module').then((m) => m.MainModule) }
@@ -8,7 +8,6 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      initialNavigation: 'enabled',
       useHash: true
     })
   ],

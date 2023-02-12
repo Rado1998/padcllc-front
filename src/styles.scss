@@ -384,14 +384,14 @@ hr {
 
 .mobile-header {
     padding-top: 8rem;
-    background: url("/assets/images/mobile-header-img.png") center center no-repeat;
+    background: url("/assets/images/header-bg.png") center center no-repeat;
     background-size: cover;
     text-align: center;
     padding-bottom: 25%;
     background-position: left bottom;
     height: auto;
     overflow: hidden;
-    min-height: 100vh;
+    min-height: 600px;
 }
 
 .header .h1-large {
