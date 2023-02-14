@@ -15,6 +15,6 @@ export class MainService {
     ) { }
 
     public getOurProjects(): Observable<APIResponse<IProject[]>> {
-        return this._httpClient.get<APIResponse<IProject[]>>('/projects/all');
+        return this._httpClient.get<APIResponse<IProject[]>>('/projects');
     }
 }
