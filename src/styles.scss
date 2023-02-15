@@ -607,9 +607,11 @@ hr {
     transition: all 0.3s linear !important;
 }
 
-.aws-img {
+.partner-img {
     height: 70px;
     width: auto;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
 
 .amount-num {
@@ -1478,6 +1480,10 @@ figure.effect-team:hover p {
         height: auto;
         margin-top: 20px;
     }
+    .web {
+        height: auto;
+        margin-top: 20px;
+    }
     .ourProjects .carousel-inner {
         padding-right: 0px;
     }
@@ -1509,6 +1515,8 @@ figure.effect-team:hover p {
         height: 100%;
         margin-top: 15px;
         padding: 9px;
+        width: 33.3333%;
+        min-height: 120px;
     }
     .numbers__window__digit {
         padding: 0 0.72em 0 0px;
@@ -2071,4 +2079,18 @@ span.dropDownMenu.active {
 .slick-dots {
     bottom: -30px;
     height: 50px;
+}
+
+.team-slider .slick-initialized .slick-slide {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.w-65 {
+    width: 65%;
+}
+
+.w-35 {
+    width: 35%;
 }

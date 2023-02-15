@@ -34,7 +34,16 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
     slidesToScroll: 3,
     infinite: true,
     speed: 300,
-    dots: true
+    dots: true,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
   };
 
   @ViewChild('wwdContainer')

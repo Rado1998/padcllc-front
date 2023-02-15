@@ -4,7 +4,7 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
     selector: 'app-send-request',
     templateUrl: 'send-request.component.html',
     styleUrls: ['send-request.component.scss'],
-    encapsulation:ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None
 })
 export class SendRequestComponent implements OnInit, OnDestroy {
 
