@@ -7,6 +7,8 @@ import { debounceTime, map, takeUntil } from 'rxjs/operators';
 
 import { BaseAPIService } from '@api-services/index';
 import { IProject } from '@models/projects';
+import { ITeamMember } from '@models/team';
+import { ArrayHelpers } from '@helpers/array';
 
 @Component({
   selector: 'app-home-view',
@@ -17,10 +19,19 @@ import { IProject } from '@models/projects';
 export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
   private _unsubscribe$: Subject<void> = new Subject<void>();
   public projects: IProject[] = [];
+  public team: ITeamMember[] = [];
 
   public slideConfig = {
     slidesToShow: 1,
     slidesToScroll: 1,
+    infinite: true,
+    speed: 300,
+    dots: true
+  };
+
+  public teamSlideConfig = {
+    slidesToShow: 3,
+    slidesToScroll: 3,
     infinite: true,
     speed: 300,
     dots: true
@@ -48,7 +59,8 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private _loadInitalData(): void {
     forkJoin([
-      this._getProjects()
+      this._getProjects(),
+      this._getTeam()
     ])
       .pipe(
         takeUntil(this._unsubscribe$),
@@ -71,10 +83,17 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
       .pipe(
         map(({ data }) => {
           this.projects = data;
-          console.log('data', data);
         })
       );
+  }
 
+  private _getTeam(): Observable<void> {
+    return this._baseAPIService.main.getTeamData()
+      .pipe(
+        map((data) => {
+          this.team = ArrayHelpers.shuffle(data);
+        })
+      );
   }
 
   private _setScrollPosition(): void {

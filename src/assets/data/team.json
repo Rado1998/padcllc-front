@@ -1,0 +1,92 @@
+[
+    {
+        "image": "Armen.jpg",
+        "name": "Armen Melkonyan",
+        "description": "DevOps Engineer"
+    },
+    {
+        "image": "Artyom-M.JPG",
+        "name": "Artyom Mikaelyan",
+        "description": "Front-End Engineer"
+    },
+    {
+        "image": "Artyom.jpg",
+        "name": "Artyom Baghdasaryan",
+        "description": "React JS Developer"
+    },
+    {
+        "image": "Arzin.jpg",
+        "name": "Arzin Nikolyan",
+        "description": "Back-End Engineer"
+    },
+    {
+        "image": "Julieta.jpg",
+        "name": "Julieta Karapetyan",
+        "description": "Project Manager (Intern)"
+    },
+    {
+        "image": "Lyova.jpg",
+        "name": "Lyov Tigranyan",
+        "description": "Quality Assurance Engineer"
+    },
+    {
+        "image": "Matevos.jpg",
+        "name": "Matevos Karapetyan",
+        "description": "Back-End Engineer"
+    },
+    {
+        "image": "Qnarik.jpg",
+        "name": "Qnarik Avetisyan",
+        "description": "React JS/Native Developer"
+    },
+    {
+        "image": "Qristina.jpg",
+        "name": "Qristina Gyulbekyan",
+        "description": "React JS Developer"
+    },
+    {
+        "image": "Rado.jpg",
+        "name": "Rado Poghossian",
+        "description": "CTO & Co-Founder"
+    },
+    {
+        "image": "Rima.jpg",
+        "name": "Rima Hovhannisyan",
+        "description": "Back-End Engineer"
+    },
+    {
+        "image": "Robert.jpg",
+        "name": "Robert Grkikyan",
+        "description": "React Native Developer"
+    },
+    {
+        "image": "Saten.jpg",
+        "name": "Saten Gevorgyan",
+        "description": "Quality Assurance Engineer"
+    },
+    {
+        "image": "Seda.jpg",
+        "name": "Seda Gafaryan",
+        "description": "Front-End Engineer"
+    },
+    {
+        "image": "Tatev.JPG",
+        "name": "Tatev Avetisyan",
+        "description": "Quality Assurance Engineer"
+    },
+    {
+        "image": "Tigran.jpg",
+        "name": "Tigran Barseghyan",
+        "description": "CEO & Co-Founder"
+    },
+    {
+        "image": "Vahe.JPG",
+        "name": "Vahe Hakobyan",
+        "description": "Back-End Engineer"
+    },
+    {
+        "image": "Zhanna.jpg",
+        "name": "Zhanna Poghossian",
+        "description": "Front-End Engineer"
+    }
+]

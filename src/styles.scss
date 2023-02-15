@@ -305,7 +305,7 @@ hr {
     color: #065e89;
     background-color: #00a8c9;
     color: #ffffff;
-    box-shadow: 1px 2px 8px 2px #c6c6c6;
+    // box-shadow: 1px 2px 8px 2px #c6c6c6;
     margin-right: 8px;
     transition: all 0.3s linear !important;
     padding-left: 14px;
@@ -993,7 +993,13 @@ figure.effect-team img {
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
     transition: opacity 0.35s, transform 0.35s;
     -webkit-transform: translate3d(-40px, 0, 0);
+    object-fit: cover;
+    object-position: 0 -50px;
     transform: translate3d(-40px, 0, 0);
+}
+
+figure.effect-team .member_name {
+    font-size: 1.55rem;
 }
 
 figure.effect-team figcaption {
@@ -1021,10 +1027,13 @@ figure.effect-team h2 {
 }
 
 figure.effect-team p {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.8);
     opacity: 0;
     -webkit-transition: opacity 0.2s, -webkit-transform 0.35s;
     transition: opacity 0.2s, transform 0.35s;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 0 5px;
 }
 
 figure.effect-team:hover img,
@@ -2057,4 +2066,9 @@ span.dropDownMenu.active {
     to {
         top: 0;
     }
+}
+
+.slick-dots {
+    bottom: -30px;
+    height: 50px;
 }

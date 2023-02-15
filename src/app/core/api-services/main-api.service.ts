@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { IProject, APIResponse } from '@models/index';
+import { IProject, APIResponse, ITeamMember } from '@models/index';
 
 import { Observable } from 'rxjs';
 
@@ -16,5 +16,10 @@ export class MainService {
 
     public getOurProjects(): Observable<APIResponse<IProject[]>> {
         return this._httpClient.get<APIResponse<IProject[]>>('/projects');
+    }
+
+    public getTeamData(): Observable<ITeamMember[]> {
+        console.log(`${window.location.origin}/assets/data/team.json`);
+        return this._httpClient.get<ITeamMember[]>(`${window.location.origin}/assets/data/team.json`);
     }
 }

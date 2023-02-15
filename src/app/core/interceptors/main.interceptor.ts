@@ -11,8 +11,12 @@ export class MainInterceptor implements HttpInterceptor {
     constructor() { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        let url = req.url;
+        if (!(url.startsWith('http://') || url.startsWith('https://'))) {
+            url = `${environment.apiUrl}${req.url}`;
+        }
         const clonedReq = req.clone({
-            url: `${environment.apiUrl}${req.url}`
+            url
         });
         return next.handle(clonedReq);
     }
