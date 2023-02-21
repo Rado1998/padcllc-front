@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import {
     ContactUsComponent,
     FooterComponent,
@@ -16,7 +17,7 @@ import { InlineSvgDirective } from './directives';
         ContactUsComponent,
         SendRequestComponent
     ],
-    imports: [],
+    imports: [RouterModule],
     exports: [
         InlineSvgDirective,
         FooterComponent,

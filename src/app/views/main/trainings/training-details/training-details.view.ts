@@ -38,7 +38,8 @@ export class TrainingDetailsViewComponent implements OnInit, OnDestroy {
     }
 
     public getImageUrl(mediaFiles: IMediaFile): string {
-        return `${environment.apiUrl}/${mediaFiles[0]?.path}`;
+        console.log(mediaFiles,'media');
+        return `${environment.apiUrl}/${mediaFiles?.path}`;
     }
 
     ngOnDestroy(): void {

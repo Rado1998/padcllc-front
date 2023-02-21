@@ -7,7 +7,7 @@
                             Us</span>
                     </h2>
                     <div class="join-sep mb-5 mt-3"></div>
-                    <p class="text-center">There are many variations of passages of Lorem Ipsum available
+                    <p class="text-center">Let's Meet… Coffee Is On Us :)
                     </p>
                 </div>
             </div>
@@ -20,26 +20,27 @@
                         <label for="floatingInput">Name Surname</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="Phone">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Phone">
                         <label for="floatingInput">Phone</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="City">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="City">
                         <label for="floatingInput">City</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Emails">
+                        <input type="email" class="form-control" id="floatingemail" placeholder="Email">
                         <label for="floatingemail">Email</label>
                     </div>
                     <div class="form-floating d-flex align-items-center justify-content-between w-100">
                         <div class="d-inline-block w-65">
-                            <input class="form-control" type="file" id="formFile">
+                            <button class="btn btn-primary" id="buttonFile"
+                                onclick="document.getElementById('formFile').click();">Upload file</button>
+                            <input type="file" style="display:none;" id="formFile" name="file" />
                         </div>
                         <div class="d-inline-block w-35 d-flex justify-content-end">
                             <button type="submit" class="btn btn-primary">Send Request</button>
                         </div>
                     </div>
-
                     <!-- end of contact form -->
                 </div>
             </div>

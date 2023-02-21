@@ -904,7 +904,7 @@ figure.effect-layla:hover img {
     overflow: hidden;
     margin: 10px 1%;
     min-width: 320px;
-    max-width: 480px;
+    // max-width: 480px;
     max-height: 204px;
     background: #000000;
     text-align: center;
@@ -1001,7 +1001,7 @@ figure.effect-team img {
 }
 
 figure.effect-team .member_name {
-    font-size: 1.55rem;
+    font-size: 1.45rem;
 }
 
 figure.effect-team figcaption {
@@ -2077,10 +2077,17 @@ span.dropDownMenu.active {
 }
 
 .slick-dots {
-    bottom: -30px;
+    bottom: 30px;
     height: 50px;
 }
 
+.team-slider .slick-dots {
+    bottom: -15px;
+}
+
+.slick-dotted.slick-slider {
+    padding-bottom: 30px;
+}
 .team-slider .slick-initialized .slick-slide {
     display: flex !important;
     align-items: center !important;
