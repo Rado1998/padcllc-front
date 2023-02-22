@@ -31,11 +31,7 @@
 
 <!-- Content-->
 <div class="container">
-    <app-career-item></app-career-item>
-    <app-career-item></app-career-item>
-    <app-career-item></app-career-item>
-    <app-career-item></app-career-item>
-    <app-career-item></app-career-item>
+    <app-career-item [vacancy]="item" *ngFor="let item of vacancies"></app-career-item>
 </div>
 
 

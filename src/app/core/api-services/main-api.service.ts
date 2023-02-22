@@ -19,7 +19,6 @@ export class MainService {
     }
 
     public getTeamData(): Observable<ITeamMember[]> {
-        console.log(`${window.location.origin}/assets/data/team.json`);
         return this._httpClient.get<ITeamMember[]>(`${window.location.origin}/assets/data/team.json`);
     }
 }

@@ -3,10 +3,8 @@
         <img class="img-fluid career-img" src="/assets/images/employee.png" alt="Career">
     </div>
     <div class="col-lg-8">
-        <h2 class="career-job-title">HR Manager</h2>
-        <p class="mb-0 career-text">There are many variations of passages of Lorem Ipsum available, but the
-            majority have suffered alteration in some form, by injected humour, or randomised words which
-            don't look even slightly</p>
+        <h2 class="career-job-title">{{vacancy.title}}</h2>
+        <p class="mb-0 career-text" [innerHTML]="vacancy.shortDescription"></p>
         <div class="career-show">
             <a class="career-more cursor-pointer" (click)="onClickSeeMore()">See
                 {{(!isSeeMore) ? 'More' : 'Less' }}</a>
@@ -16,11 +14,6 @@
         <a class="btn-solid-reg view-more-partnership career-join" href="#">Join Us</a>
     </div>
     <div class="career-requirements text-uppercase mt-3 close-career-details" [class.open-career-details]="isSeeMore">
-        <p>Here is some text that I want added to the HTML file Here is
-            some text that I want added to the HTML file Here is some text that I want added to the HTML
-            file (just a sentence for showing it's on the full row)</p>
-        <p>Requirement 1</p>
-        <p>Requirement 2</p>
-        <p>Requirement 3</p>
+        <p [innerHTML]="vacancy?.description"></p>
     </div>
 </div>

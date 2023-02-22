@@ -1,4 +1,6 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation, Input } from '@angular/core';
+
+import { IVacancy } from '@models/vacancies';
 
 @Component({
     selector: 'app-career-item',
@@ -7,6 +9,7 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 export class CareerItemComponent implements OnInit, OnDestroy {
+    @Input() public vacancy: IVacancy;
     public isSeeMore: boolean = false;
 
     constructor() { }
