@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 
 import { MainInterceptor } from '@interceptors/index';
 
+import { NgxMaskModule } from 'ngx-mask';
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +19,9 @@ import { MainInterceptor } from '@interceptors/index';
     BrowserModule.withServerTransition({ appId: 'padcllc-server' }),
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskModule.forRoot(),
+    ToastrModule.forRoot()
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

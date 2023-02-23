@@ -3,6 +3,7 @@
 /*     General Styles     */
 
 /**************************/
+@import 'ngx-toastr/toastr';
 
 body,
 html {
@@ -2100,4 +2101,14 @@ span.dropDownMenu.active {
 
 .w-35 {
     width: 35%;
+}
+
+.form-error {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+.ng-touched.ng-invalid {
+    border-color: red;
 }

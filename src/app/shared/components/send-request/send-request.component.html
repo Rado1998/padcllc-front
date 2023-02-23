@@ -7,38 +7,47 @@
                             Us</span>
                     </h2>
                     <div class="join-sep mb-5 mt-3"></div>
-                    <p class="text-center">Let's Meet… Coffee Is On Us :)
+                    <p class="text-center" [innerHTML]="subtitle">
                     </p>
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-5" [formGroup]="sendRequestForm">
+                <p class="form-error" *ngIf="showErrors">Form contains invalid values</p>
                 <div class="col-lg-6 offset-lg-3">
-
                     <!-- Contact Form -->
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="Name">
+                        <input type="email" class="form-control" id="floatingInput" formControlName="name"
+                            placeholder="Name">
                         <label for="floatingInput">Name Surname</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Phone">
+                        <input type="text" class="form-control" id="floatingInput" formControlName="phone"
+                            placeholder="Phone">
                         <label for="floatingInput">Phone</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="City">
-                        <label for="floatingInput">City</label>
+                        <input type="text" class="form-control" id="floatingInput" formControlName="address"
+                            placeholder="Address">
+                        <label for="floatingInput">Address</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingemail" placeholder="Email">
+                        <input type="email" class="form-control" id="floatingemail" formControlName="email"
+                            placeholder="Email">
                         <label for="floatingemail">Email</label>
+                    </div>
+                    <div class="form-floating mb-3 d-flex align-items-center justify-content-between" *ngIf="fileName">
+                        <span class="file-label">{{fileName}}</span>
+                        <i class="fa fa-remove remove-icon" (click)="onClickRemoveFile()"></i>
                     </div>
                     <div class="form-floating d-flex align-items-center justify-content-between w-100">
                         <div class="d-inline-block w-65">
                             <button class="btn btn-primary" id="buttonFile"
                                 onclick="document.getElementById('formFile').click();">Upload file</button>
-                            <input type="file" style="display:none;" id="formFile" name="file" />
+                            <input type="file" style="display:none;" id="formFile" name="file" accept=".pdf, .docx"
+                                (change)="onChooseFile($event)" />
                         </div>
                         <div class="d-inline-block w-35 d-flex justify-content-end">
-                            <button type="submit" class="btn btn-primary">Send Request</button>
+                            <button type="submit" class="btn btn-primary" (click)="onClickSend()">Send Request</button>
                         </div>
                     </div>
                     <!-- end of contact form -->

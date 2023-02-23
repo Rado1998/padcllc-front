@@ -3,7 +3,6 @@
         <div class="row mt-5">
             <div class="col-lg-12">
                 <div class="text-container">
-
                     <h2 class="h1-large text-center fw-normal">Find your<span class="inspire text-capitalize ">
                             Career</span>
                     </h2>
@@ -36,7 +35,8 @@
 
 
 <!-- Send Request -->
-<app-send-request id="request"></app-send-request>
-
+<div #sendRequest class="join_vacancy" [class.open]="selectedVacancy">
+    <app-send-request id="request" [subtitle]="joinSubtitle" (submit)="onFormSubmit($event)" [resetForm]="resetForm"></app-send-request>
+</div>
 <!-- Copyright -->
 <app-footer></app-footer>

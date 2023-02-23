@@ -55,6 +55,9 @@
       "@directives/*": [
         "src/app/shared/directives/*"
       ],
+      "@validators/*": [
+        "src/app/core/validators/*"
+      ],
       "@pipes/*": [
         "src/app/shared/pipes/*"
       ],
