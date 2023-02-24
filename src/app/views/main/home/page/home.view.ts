@@ -1,14 +1,16 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PlatformService } from '@services/platform.service';
 
 import { forkJoin, fromEvent, Observable, Subject } from 'rxjs';
-import { debounceTime, map, takeUntil } from 'rxjs/operators';
+import { debounceTime, finalize, map, takeUntil } from 'rxjs/operators';
 
 import { BaseAPIService } from '@api-services/index';
 import { IProject } from '@models/projects';
 import { ITeamMember } from '@models/team';
 import { ArrayHelpers } from '@helpers/array';
+import { IJoinRequest } from '@models/join-request';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-home-view',
@@ -20,6 +22,8 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
   private _unsubscribe$: Subject<void> = new Subject<void>();
   public projects: IProject[] = [];
   public team: ITeamMember[] = [];
+  public resetForm: EventEmitter<boolean> = new EventEmitter<boolean>();
+  public loading: boolean = false;
 
   public slideConfig = {
     slidesToShow: 1,
@@ -54,7 +58,8 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(
     private _baseAPIService: BaseAPIService,
     private _activatedRoute: ActivatedRoute,
-    private _platformService: PlatformService
+    private _platformService: PlatformService,
+    private _toastrService: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -150,6 +155,22 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
       wwidItems[i]?.classList.remove('whatWeDo_item--img--active');
       wwidItems[i]?.classList.remove('whatWeDo_item--img--active--last');
     }
+  }
+
+  public onFormSubmit(data: IJoinRequest): void {
+    if (this.loading) {
+      return;
+    }
+    this.loading = true;
+    this._baseAPIService.main.sendContactRequest(data)
+      .pipe(
+        takeUntil(this._unsubscribe$),
+        map(() => {
+          this.resetForm.next(true);
+          this._toastrService.info(`Message has been successfully sent !`);
+        }),
+        finalize(() => this.loading = false)
+      ).subscribe();
   }
 
   ngOnDestroy() {

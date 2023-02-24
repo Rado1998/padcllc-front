@@ -3,7 +3,7 @@
 /*     General Styles     */
 
 /**************************/
-@import 'ngx-toastr/toastr';
+@import "ngx-toastr/toastr";
 
 body,
 html {
@@ -1002,7 +1002,7 @@ figure.effect-team img {
 }
 
 figure.effect-team .member_name {
-    font-size: 1.45rem;
+    font-size: 1.35rem;
 }
 
 figure.effect-team figcaption {
@@ -2111,4 +2111,18 @@ span.dropDownMenu.active {
 
 .ng-touched.ng-invalid {
     border-color: red;
+}
+
+.warning-message {
+    display: block;
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.color-black {
+    color: black;
+}
+
+.text-auto {
+    text-transform: none !important;
 }

@@ -320,7 +320,8 @@
                             alt="alternative">
                     </div>
                     <div class="col">
-                        <img class="img-fluid mx-auto d-block partner-img" src="/assets/images/lightcore.svg" alt="alternative">
+                        <img class="img-fluid mx-auto d-block partner-img" src="/assets/images/lightcore.svg"
+                            alt="alternative">
                     </div>
                 </div>
 
@@ -367,9 +368,8 @@
     </div>
 </div>
 
-
 <!-- Send Request -->
-<app-send-request id="request"></app-send-request>
+<app-send-request id="request" (submit)="onFormSubmit($event)" [resetForm]="resetForm"></app-send-request>
 
 <!-- Contact -->
 <app-contact-us id="contact"></app-contact-us>

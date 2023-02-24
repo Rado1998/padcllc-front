@@ -18,6 +18,8 @@ import { takeUntil } from 'rxjs/operators';
 export class TrainingDetailsViewComponent implements OnInit, OnDestroy {
     private _unsubscribe$: Subject<void> = new Subject<void>();
     public trainigData: ITraining = {} as ITraining;
+    public isAvailable: boolean = false;
+    public subTitle: string = 'This training is not available for joining, as it has already been completed';
 
     constructor(
         private _activatedRoute: ActivatedRoute,
@@ -34,11 +36,17 @@ export class TrainingDetailsViewComponent implements OnInit, OnDestroy {
             .pipe(takeUntil(this._unsubscribe$))
             .subscribe(({ data }) => {
                 this.trainigData = data;
+                this.isAvailable = data.isAvailable;
+                if(this.isAvailable){
+                    this.subTitle = `
+                    <b>To join the training, please fill out the form below.</b> <br>
+                    <span class="warning-message">(Please be careful with providing data, because if the data is incorrect, we will not be able to contact you) </span>
+                    `
+                }
             });
     }
 
     public getImageUrl(mediaFiles: IMediaFile): string {
-        console.log(mediaFiles,'media');
         return `${environment.apiUrl}/${mediaFiles?.path}`;
     }
 

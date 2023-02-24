@@ -4,7 +4,6 @@
         <div class="row mt-5">
             <div class="col-lg-12">
                 <div class="text-container">
-
                     <h2 class="h1-large text-center text-uppercase fw-normal">{{trainigData?.name}}
                     </h2>
                     <div class="training-sep mb-5 mt-3"></div>
@@ -40,6 +39,10 @@
                 </div>
             </div>
             <div class="col-lg-6">
+                <div class="d-block">
+                    <h5 class="color-black text-auto"><b>Date: </b> {{trainigData?.date | date: 'dd MMM, yyyy HH:mm'}} <br></h5>
+                    <h5 class="color-black text-auto"><b>Location: </b> Mher Mkrtchyan 47/1 3101 Gyumri, Armenia</h5>
+                </div>
                 <div class="image-container">
                     <img class="img-fluid w-100" [src]="getImageUrl(trainigData?.mediaFiles)" alt="PADC">
                 </div>
@@ -49,7 +52,8 @@
 </div>
 
 <!-- Send Request -->
-<app-send-request id="request"></app-send-request>
-
+<div class="contact">
+    <app-send-request id="request" [disabled]="!isAvailable" [subtitle]="subTitle"></app-send-request>
+</div>
 <!-- Contact -->
 <app-contact-us id="contact"></app-contact-us>

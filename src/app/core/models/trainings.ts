@@ -8,4 +8,5 @@ export interface ITraining {
     mediaFiles: IMediaFile[];
     name: string;
     updatedAt: string;
+    isAvailable: boolean;
 }

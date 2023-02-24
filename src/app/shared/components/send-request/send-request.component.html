@@ -42,12 +42,14 @@
                     <div class="form-floating d-flex align-items-center justify-content-between w-100">
                         <div class="d-inline-block w-65">
                             <button class="btn btn-primary" id="buttonFile"
-                                onclick="document.getElementById('formFile').click();">Upload file</button>
+                                onclick="document.getElementById('formFile').click();" [disabled]="disabled">Upload
+                                CV</button>
                             <input type="file" style="display:none;" id="formFile" name="file" accept=".pdf, .docx"
                                 (change)="onChooseFile($event)" />
                         </div>
                         <div class="d-inline-block w-35 d-flex justify-content-end">
-                            <button type="submit" class="btn btn-primary" (click)="onClickSend()">Send Request</button>
+                            <button type="submit" class="btn btn-primary" (click)="onClickSend()"
+                                [disabled]="disabled">Send Request</button>
                         </div>
                     </div>
                     <!-- end of contact form -->

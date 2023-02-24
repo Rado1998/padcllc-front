@@ -14,7 +14,7 @@
         <a class="btn-solid-reg view-more-partnership career-join" [routerLink]="[]"
             [queryParams]="{'vacancyId':vacancy.id}">Join Us</a>
     </div>
-    <div class="career-requirements text-uppercase mt-3 close-career-details" [class.open-career-details]="isSeeMore">
+    <div class="career-requirements mt-3 close-career-details" [class.open-career-details]="isSeeMore">
         <p [innerHTML]="vacancy?.description"></p>
     </div>
 </div>

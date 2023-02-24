@@ -13,6 +13,7 @@ import { VALIDATION_PATTERNS } from '@validators/patterns';
 export class SendRequestComponent implements OnInit, OnDestroy {
     @Input() public subtitle: string = `Let's Meet… Coffee Is On Us :)`;
     @Input() resetForm: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Input() public disabled: boolean;
     @Output() public submit: EventEmitter<IJoinRequest> = new EventEmitter<IJoinRequest>();
     public sendRequestForm: FormGroup;
     public fileName: string;
@@ -24,7 +25,14 @@ export class SendRequestComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this._initForm();
+        this._checkIfFormDisabled();
         this._handleResetFormChanges();
+    }
+
+    private _checkIfFormDisabled(): void {
+        if (this.disabled) {
+            this.sendRequestForm.disable();
+        }
     }
 
     private _handleResetFormChanges(): void {
