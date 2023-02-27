@@ -5,6 +5,7 @@ import {
     ElementRef,
     OnDestroy,
     OnInit,
+    Renderer2,
     ViewChild,
     ViewEncapsulation
 } from '@angular/core';
@@ -24,9 +25,12 @@ import { filter, map, takeUntil } from 'rxjs/operators';
 })
 export class TopbarComponent implements OnInit, OnDestroy {
     private _unsubscribe$: Subject<void> = new Subject<void>();
+    private _isNavbarOpen: boolean = false;
     @ViewChild('navbar')
     private _navbarElement: ElementRef<HTMLElement>;
-    private _isNavbarOpen: boolean = false;
+    @ViewChild('toggleBtn')
+    private _toggleBtnElement: ElementRef<HTMLElement>;
+
 
     public isNavbarOpenEvent: Subject<boolean> = new Subject<boolean>();
 
@@ -34,6 +38,7 @@ export class TopbarComponent implements OnInit, OnDestroy {
         private _router: Router,
         private _activatedRoute: ActivatedRoute,
         private _platformService: PlatformService,
+        private _renderer2: Renderer2
     ) {
         if (this._platformService.isBrowser) {
             this._handleScrollEvent();
@@ -42,6 +47,22 @@ export class TopbarComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this._handleRouteChanges();
+        this._handleOutsideEvent();
+    }
+
+    private _handleOutsideEvent(): void {
+        this._renderer2.listen('window', 'click', (e: Event) => {
+            console.log(this._navbarElement.nativeElement, this._toggleBtnElement.nativeElement)
+            console.log(e.target);
+            if (e.target !== this._navbarElement.nativeElement && e.target !== this._toggleBtnElement.nativeElement) {
+                this._closeNavbar();
+            }
+        });
+    }
+
+    private _closeNavbar(): void {
+        this._isNavbarOpen = false;
+        this.isNavbarOpenEvent.next(false);
     }
 
     private _handleRouteChanges(): void {
@@ -49,8 +70,7 @@ export class TopbarComponent implements OnInit, OnDestroy {
             .pipe(
                 filter((e) => e instanceof NavigationEnd),
                 map(() => {
-                    this._isNavbarOpen = false;
-                    this.isNavbarOpenEvent.next(false);
+                    this._closeNavbar();
                 })
             ).subscribe();
     }

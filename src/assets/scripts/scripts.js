@@ -21,6 +21,7 @@
 
 
 window.onload = function() {
+    console.log('called');
     scrollFunction();
 };
 
