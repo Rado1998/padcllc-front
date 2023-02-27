@@ -1,0 +1,20 @@
+<div class="row mt-5 career-section pb-3">
+    <div class="col-lg-2 text-center">
+        <img class="img-fluid career-img" src="/assets/images/employee.png" alt="Career">
+    </div>
+    <div class="col-lg-8">
+        <h2 class="career-job-title">{{vacancy.title}}</h2>
+        <p class="mb-0 career-text" [innerHTML]="vacancy.shortDescription"></p>
+        <div class="career-show">
+            <a class="career-more cursor-pointer" (click)="onClickSeeMore()">See
+                {{(!isSeeMore) ? 'More' : 'Less' }}</a>
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <a class="btn-solid-reg view-more-partnership career-join" [routerLink]="[]"
+            [queryParams]="{'vacancyId':vacancy.id}">Join Us</a>
+    </div>
+    <div class="career-requirements mt-3 close-career-details" [class.open-career-details]="isSeeMore">
+        <p [innerHTML]="vacancy?.description"></p>
+    </div>
+</div>

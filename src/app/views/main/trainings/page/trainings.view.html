@@ -1,0 +1,51 @@
+<header id="header" class=" training">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-12">
+                <div class="text-container">
+
+                    <h2 class="h1-large text-center fw-normal">About PADC<span class="inspire text-capitalize ">
+                            Trainings</span>
+                    </h2>
+                    <div class="padc-sep mb-5 mt-3"></div>
+                    <p class="p-large text-center lh-lg">The PADC Academy began in the Fall of 2020, by our Co-Founders
+                        Tigran
+                        Barseghyan and Radik Poghossian taught at PADC for 2 years and ran the
+                        Education Academy for most of their time here. PADC Academie is designed
+                        to function as small-schools-within-a-school for at-risk students and other
+                        students looking for a more personal educational experience. Our Academy
+                        provides individual teacher-to-student support, a dedicated team of teachers
+                        and support staff, cross-curricular units and projects, and a focus on
+                        developing life-skills.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+
+<div id="request" class="form-1">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col" *ngFor="let item of trainings">
+                <div class="grid tarinings-grid ">
+                    <figure class="effect-layla">
+                        <img [src]="getImageUrl(item?.mediaFiles)" [alt]="item?.name" />
+                        <figcaption>
+                            <p class="text-white"><a class="join-btn" [routerLink]="['/trainings', item?.id]">Join</a>
+                            </p>
+                            <p class="text-white">{{item?.name}}</p>
+                            <p class="text-white"> {{item?.date | date:'dd MMM / HH:mm' | uppercase}}</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact -->
+<app-contact-us></app-contact-us>
+<app-footer></app-footer>

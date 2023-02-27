@@ -1,0 +1,73 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@env": [
+        "src/environments/environment"
+      ],
+      "@api-services/*": [
+        "src/app/core/api-services/*"
+      ],
+      "@animations/*": [
+        "src/app/core/animations/*"
+      ],
+      "@globals/*": [
+        "src/app/core/globals/*"
+      ],
+      "@utils/*": [
+        "src/app/core/utils/*"
+      ],
+      "@guards/*": [
+        "src/app/core/guards/*"
+      ],
+      "@helpers/*": [
+        "src/app/core/helpers/*"
+      ],
+      "@modules/*": [
+        "src/app/core/modules/*"
+      ],
+      "@models/*": [
+        "src/app/core/models/*"
+      ],
+      "@services/*": [
+        "src/app/core/services/*"
+      ],
+      "@interceptors/*": [
+        "src/app/core/interceptors/*"
+      ],
+      "@components/*": [
+        "src/app/shared/components/*"
+      ],
+      "@directives/*": [
+        "src/app/shared/directives/*"
+      ],
+      "@validators/*": [
+        "src/app/core/validators/*"
+      ],
+      "@pipes/*": [
+        "src/app/shared/pipes/*"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}

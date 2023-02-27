@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-light abs-top" aria-label="Main navigation" #navbar>
+    <div class="container menu-mid-width">
+
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" routerLink="/home"><img src="/assets/images/padc-logo.svg"
+                alt="alternative"></a>
+
+        <button class="navbar-toggler p-0 border-0" type="button" (click)="onClickOpenNavbar()"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" #toggleBtn></span>
+        </button>
+
+        <div class="navbar-collapse offcanvas-collapse" [class.open]="isNavbarOpenEvent | async">
+            <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" routerLinkActive="active"
+                        [class.active]="checkIfItsActiveRoute('')" routerLink="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home" routerLinkActive="active"
+                        [class.active]="checkIfItsActiveRoute('ourprojects')"
+                        [queryParams]="{'sectionId':'ourprojects'}">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home" routerLinkActive="active"
+                        [class.active]="checkIfItsActiveRoute('whatwedo')" [queryParams]="{'sectionId':'whatwedo'}">What
+                        We Do</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home" routerLinkActive="active"
+                        [class.active]="checkIfItsActiveRoute('ourservices')"
+                        [queryParams]="{'sectionId':'ourservices'}">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home" routerLinkActive="active"
+                        [class.active]="checkIfItsActiveRoute('partners')"
+                        [queryParams]="{'sectionId':'partners'}">Partners</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home" routerLinkActive="active"
+                        [class.active]="checkIfItsActiveRoute('ourteam')" [queryParams]="{'sectionId':'partners'}"
+                        [queryParams]="{'sectionId':'ourteam'}">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home" routerLinkActive="active"
+                        [class.active]="checkIfItsActiveRoute('contact')"
+                        [queryParams]="{'sectionId':'contact'}">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/trainings" routerLinkActive="active">Trainings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/career" routerLinkActive="active">Career</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bordered-item" href="https://blog.padcllc.com" target="_blank"
+                        routerLinkActive="active">BLOG</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

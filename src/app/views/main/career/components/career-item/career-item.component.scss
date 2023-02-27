@@ -1,0 +1,13 @@
+.close-career-details {
+    max-height: 0;
+    opacity: 0;
+}
+
+.open-career-details {
+    max-height: initial;
+    opacity: 1;
+}
+
+.career-requirements {
+    transition: all 0.3s;
+}

@@ -1,0 +1,59 @@
+<!-- Header -->
+<header id="header" class="training">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-12">
+                <div class="text-container">
+                    <h2 class="h1-large text-center text-uppercase fw-normal">{{trainigData?.name}}
+                    </h2>
+                    <div class="training-sep mb-5 mt-3"></div>
+                    <p class="p-large text-center lh-lg">Since 2020, PADC organizes bunch of training for different
+                        stacks: Web/Mobile development, Manual QA, Automation QA, DevOps Engineering, Software
+                        Engineering, etc… The duration of the training is different: depending on the stack. Here it is
+                        the short list of the stack:
+                        Web Development: HTML/CSS, JavaScript, TypeScript, Angular, ReactJS, NestJS
+                        Mobile Development: HTML/CSS, JavaScript, React Native
+                        Software Engineering: Linux, Bash Scripting, Python, C++, Qt
+                        DevOps: Linux, Python, Jenkins, Docker, K8s, GitLab CI/CD, GitHub Actions, Terraform, Ansible,
+                        etc…
+                        QA: QA basics, principles, Python, Selenium, Tools(Jira, Git, etc…)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Content-->
+<div id="section">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-6">
+                <div class="text-container">
+                    <h2 class="h1-large text-uppercase fw-normal">{{trainigData?.name}}
+                    </h2>
+                    <div class="section-sep mb-5 mt-3"></div>
+                    <p class=" text-left" [innerHTML]="trainigData?.description">
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="d-block">
+                    <h5 class="color-black text-auto"><b>Date: </b> {{trainigData?.date | date: 'dd MMM, yyyy HH:mm'}} <br></h5>
+                    <h5 class="color-black text-auto"><b>Location: </b> Mher Mkrtchyan 47/1 3101 Gyumri, Armenia</h5>
+                </div>
+                <div class="image-container">
+                    <img class="img-fluid w-100" [src]="getImageUrl(trainigData?.mediaFiles)" alt="PADC">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Send Request -->
+<div class="contact">
+    <app-send-request id="request" [disabled]="!isAvailable" [subtitle]="subTitle"></app-send-request>
+</div>
+<!-- Contact -->
+<app-contact-us id="contact"></app-contact-us>
