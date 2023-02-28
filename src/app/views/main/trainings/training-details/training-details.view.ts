@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
 import { BaseAPIService } from '@api-services/base-api.service';
@@ -23,10 +24,12 @@ export class TrainingDetailsViewComponent implements OnInit, OnDestroy {
 
     constructor(
         private _activatedRoute: ActivatedRoute,
-        private _baseAPIService: BaseAPIService
+        private _baseAPIService: BaseAPIService,
+        private _titleService: Title
     ) { }
 
     ngOnInit(): void {
+        this._titleService.setTitle('Trainings - PADC, LLC');
         this._getTrainingById();
     }
 
@@ -37,7 +40,7 @@ export class TrainingDetailsViewComponent implements OnInit, OnDestroy {
             .subscribe(({ data }) => {
                 this.trainigData = data;
                 this.isAvailable = data.isAvailable;
-                if(this.isAvailable){
+                if (this.isAvailable) {
                     this.subTitle = `
                     <b>To join the training, please fill out the form below.</b> <br>
                     <span class="warning-message">(Please be careful with providing data, because if the data is incorrect, we will not be able to contact you) </span>

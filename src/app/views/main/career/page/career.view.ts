@@ -19,6 +19,7 @@ import * as _ from 'lodash';
 import { finalize } from 'rxjs';
 import { EventEmitter } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-career-view',
@@ -38,8 +39,11 @@ export class CareerViewComponent implements OnInit, AfterViewInit, OnDestroy {
     constructor(
         private _activatedRoute: ActivatedRoute,
         private _baseAPIService: BaseAPIService,
-        private _toastrService: ToastrService
-    ) { }
+        private _toastrService: ToastrService,
+        private _titleService: Title
+    ) {
+        this._titleService.setTitle('Career - PADC, LLC');
+    }
 
     ngOnInit(): void {
         this._getVacancies();

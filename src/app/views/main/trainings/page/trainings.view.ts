@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { BaseAPIService } from '@api-services/base-api.service';
 import { environment } from '@env';
 import { IMediaFile } from '@models/media-files';
@@ -18,10 +19,12 @@ export class TrainingsViewComponent implements OnInit, OnDestroy {
     public trainings: ITraining[] = [];
 
     constructor(
-        private _baseAPIService: BaseAPIService
+        private _baseAPIService: BaseAPIService,
+        private _titleService: Title
     ) { }
 
     ngOnInit(): void {
+        this._titleService.setTitle('Trainings - PADC, LLC');
         this._getAllTrainings();
     }
 
@@ -30,7 +33,6 @@ export class TrainingsViewComponent implements OnInit, OnDestroy {
             .pipe(takeUntil(this._unsubscribe$))
             .subscribe(({ data }) => {
                 this.trainings = data;
-                console.log('value', data);
             });
     }
 
