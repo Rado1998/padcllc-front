@@ -11,6 +11,7 @@ import { ITeamMember } from '@models/team';
 import { ArrayHelpers } from '@helpers/array';
 import { IJoinRequest } from '@models/join-request';
 import { ToastrService } from 'ngx-toastr';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home-view',
@@ -66,8 +67,11 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
     private _baseAPIService: BaseAPIService,
     private _activatedRoute: ActivatedRoute,
     private _platformService: PlatformService,
-    private _toastrService: ToastrService
-  ) { }
+    private _toastrService: ToastrService,
+    private _titleService: Title
+  ) {
+    this._titleService.setTitle('Home - PADC, LLC');
+  }
 
   ngOnInit(): void {
     this._loadInitalData();

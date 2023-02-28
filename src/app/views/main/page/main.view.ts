@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { Subject, timer } from 'rxjs';
 import { distinctUntilChanged, filter, map, switchMap, takeUntil } from 'rxjs/operators';
@@ -16,8 +17,10 @@ export class MainViewComponent implements OnInit, OnDestroy {
     private _unsubscribe$: Subject<void> = new Subject<void>();
 
     constructor(
-        private _router: Router
+        private _router: Router,
+        private _titleService: Title
     ) {
+        this._titleService.setTitle('Home - PADC, LLC');
         this._handleNavigationEndEvent();
     }
 
