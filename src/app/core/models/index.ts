@@ -6,3 +6,4 @@ export * from './media-files';
 export * from './trainings';
 export * from './vacancies';
 export * from './join-request';
+export * from './position';

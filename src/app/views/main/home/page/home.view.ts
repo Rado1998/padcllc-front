@@ -184,6 +184,17 @@ export class HomeViewComponent implements OnInit, AfterViewInit, OnDestroy {
       ).subscribe();
   }
 
+  public setPosition(item: ITeamMember): object {
+    let style = {}
+    const { position } = item;
+
+    if (position) {
+      style['object-position'] = position;
+    }
+
+    return style;
+  }
+
   ngOnDestroy() {
     this._unsubscribe$.next();
     this._unsubscribe$.complete();

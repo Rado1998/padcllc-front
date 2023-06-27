@@ -339,7 +339,7 @@
                                 [config]="teamSlideConfig">
                                 <div ngxSlickItem *ngFor="let item of team">
                                     <figure class="effect-team">
-                                        <img [src]="'/assets/images/team/'+ item.image" alt="team member image" />
+                                        <img [src]="'/assets/images/team/'+ item.image" alt="team member image" [ngStyle]="setPosition(item)" />
                                         <figcaption>
                                             <div>
                                                 <h3 class="text-white member_name">{{item.name}}</h3>
